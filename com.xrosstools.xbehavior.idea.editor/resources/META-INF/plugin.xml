@@ -1,0 +1,35 @@
+<idea-plugin>
+  <id>com.xrosstools.xbehavior.editor</id>
+  <name>Xross Behavior Tree Edtitor</name>
+  <version>1.0</version>
+  <vendor email="he_jiehui@163.com" url="https://www.xrosstools.com">Xross Tools</vendor>
+
+  <description><![CDATA[
+      A behavior tree editor. A no-code tool for building behavior tree.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <em>1.0.0</em>Support basic concept of behavior tree.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.xrosstools.idea.gef</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileEditorProvider implementation="com.xrosstools.xbehavior.idea.editor.BehaviorTreeEditorProvider"/>
+    <fileTypeFactory implementation="com.xrosstools.xbehavior.idea.editor.XbehaviorFileTypeFactory"/>
+  </extensions>
+
+  <actions>
+    <action id="XrossTools.NewBehaviorTreeAction" class="com.xrosstools.xbehavior.idea.editor.NewBehaviorTreeAction" text="Xross Behavior Model" description="Create new Xross Behavior Tree Model file" icon="/icons/tree.png">
+      <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+    </action>
+  </actions>
+
+</idea-plugin>

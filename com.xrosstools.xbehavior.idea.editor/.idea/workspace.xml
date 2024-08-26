@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cafe8401-48f1-4328-807f-83a74fdd6754" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com.xrosstools.xbehavior.idea.editor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Action.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Condition.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/ForceFailure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/ForceSuccess.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Inverter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Parallel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Repeat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Retry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Selector.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Sequence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/Wait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/connection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/generate_helper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/generate_test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/templates/template.xbehavior" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/BehaviorTreeEditorProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/BehaviorTreePanelContentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/NewBehaviorTreeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/XbehaviorFileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/XbehaviorFileTypeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/XbehaviorIcons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/BehaviorTreeMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/CreateNodeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/ActionNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/BehaviorNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/ConditionNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/DecoratorNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/ParallelNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/SelectorNodeFigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/layout/LayoutAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/menus/BehaviorTreeContextMenuProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/menus/BehaviorTreeOutlineContextMenuProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/CompositeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ConditionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/DecoratorNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/FixedStatusNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceFailureNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceSuccessNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/InverterNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ParallelNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ProcessMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeatNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RetryNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SelectorNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SequenceNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SleepNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/WaitNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/ActionNodePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorNodeConnectionPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorNodePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorTreeDiagramPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorTreePartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/CompositeNodePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/ConditionNodePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/DecoratorNodePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/treeparts/BehaviorNodeTreePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/treeparts/BehaviorTreeDiagramTreePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/treeparts/BehaviorTreeTreePartFactory.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>convertToXML</find>
+      <find>createNode</find>
+      <find>size</find>
+      <find>outputLimit</find>
+      <find>action</find>
+      <find>ACTION</find>
+      <find>createTab</find>
+      <find>OutputFormat</find>
+      <find>BEHAVIOR_TREE</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceSuccessNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceFailureNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorNodeConnectionPart.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeConnection.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BehaviorTreeDiagramLayoutPolicy.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/ReconnectParentCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/CreateConnectionCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/DeleteConnectionCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/DeleteNodeCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/ReconnectChildCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BehaviorNodeConnectionEditPolicy.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BehaviorNodeEditPolicy.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/NamedPropertySource.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/layout/LayoutAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/CreateNodeCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/CompositeNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorNodePart.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorTreeDiagramPart.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/treeparts/BehaviorNodeTreePart.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/treeparts/BehaviorTreeDiagramTreePart.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeaterNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/FinishMode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/BehaviorNodeFigure.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ConditionMode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/XmlHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ParallellNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyEntrySourceXmlAccessor.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyEntryXmlAccessor.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertySourceXmlAccessor.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertySourceXmlRegister.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/BehaviorTreePanelContentProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ConditionNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SequenceNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/TimeoutNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/Wait.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/InvertNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/InverterNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/FixedStatusNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SelectorNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ParallelNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/XbehaviorIcons.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeType.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/WaitNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RetryNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeatNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SleepNode.java" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1713" />
+    <option name="width" value="1734" />
+    <option name="height" value="1399" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="figures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="com.xrosstools.xbehavior.idea.editor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+              <item name="treeparts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="com.xrosstools.idea.gef.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="com.xrosstools.idea.gef.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="gef" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="com.xrosstools.idea.gef.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="gef" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="intellij" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="intellij" type="462c0819:PsiDirectoryNode" />
+              <item name="designer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="platform-impl.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="intellij" type="462c0819:PsiDirectoryNode" />
+              <item name="designer" type="462c0819:PsiDirectoryNode" />
+              <item name="propertyTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.xrosstools.xbehavior.idea.editor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; IntelliJ IDEA Community Edition IC-183.6156.11 GEF &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1724602405583" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../xcommon/com.xrosstools.idea.gef" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xrosstools.xbehavior.idea.editor.commands" />
+      <recent name="com.xrosstools.xbehavior.idea.editor.model" />
+      <recent name="com.xrosstools.xbehavior.idea.editor.layout" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\赫杰辉\Documents\GitHub\xBehavior\com.xrosstools.xbehavior.idea.editor\resources\icons" />
+      <recent name="C:\Users\赫杰辉\Documents\GitHub\xBehavior\com.xrosstools.xbehavior.idea.editor\src\com\xrosstools\xbehavior\idea\editor\commands" />
+      <recent name="C:\Users\赫杰辉\Documents\GitHub\xBehavior\com.xrosstools.xbehavior.idea.editor\libs" />
+      <recent name="C:\Users\赫杰辉\Documents\GitHub\xBehavior\com.xrosstools.xbehavior.idea.editor\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="com.xrosstools.xbehavior.idea.editor" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="com.xrosstools.xbehavior.idea.editor" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cafe8401-48f1-4328-807f-83a74fdd6754" name="Default Changelist" comment="" />
+      <created>1721386100349</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721386100349</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1713" y="0" width="1734" height="1399" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6698113" visible="true" weight="0.21565114" />
+      <window_info id="Structure" order="1" sideWeight="0.3301887" side_tool="true" visible="true" weight="0.21565114" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32964426" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22924902" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32964426" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/DiagramEditor.class</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/commands/ReconnectTargetCommand.class</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/commands/ReconnectTargetCommand.class</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/commands/ReconnectSourceCommand.class</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/ListPropertyDescriptor.class</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/IPropertyDescriptor.class</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/ComboBoxPropertyDescriptor.class</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this.getModel()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/BehaviorTreeMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/figures/BehaviorNodeFigure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ConditionMode.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/org/w3c/dom/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="164" column="17" selection-start-line="164" selection-start-column="17" selection-end-line="164" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/org/w3c/dom/Element.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/EditorPanel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="742" selection-start-line="742" selection-end-line="742" />
+          <folding>
+            <element signature="e#31229#31230#0" expanded="true" />
+            <element signature="e#31287#31288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="239" column="6" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertySourceXmlRegister.java" />
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/DiagramEditor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertySourceXmlAccessor.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/XmlHelper.java" />
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/PropertyEntry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceSuccessNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/PropertyTableModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/javax/swing/JTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="4729" column="27" selection-start-line="4729" selection-start-column="27" selection-end-line="4729" selection-end-column="27" />
+          <folding>
+            <element signature="e#144488#144489#0" expanded="true" />
+            <element signature="e#144520#144521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/commands/PropertyChangeCommand.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+          <folding>
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/DecoratorNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/InverterNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/ListPropertyDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/model/Diagram.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/XmlHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+          <folding>
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2063#2064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/IPropertyDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/PropertySourceXmlRegister.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/PropertySourceXmlAccessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ParallelNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ForceFailureNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/FixedStatusNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="67" />
+          <folding>
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ProcessMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ConditionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/CompositeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/icons/Wait.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/XbehaviorIcons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.IdeaIC2018.3/system/plugins-sandbox/plugins/com.xrosstools.idea.gef.jar!/com/xrosstools/idea/gef/util/PropertyEntrySource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="90" column="78" lean-forward="true" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SelectorNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SequenceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeatNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RetryNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/BehaviorTreeEditorProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/BehaviorTreePanelContentProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/WaitNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SleepNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorNodeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>IntelliJ IDEA Community Edition IC-183.6156.11 GEF</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>com.xrosstools.xbehavior.idea.editor</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>dom4j-1.6.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
