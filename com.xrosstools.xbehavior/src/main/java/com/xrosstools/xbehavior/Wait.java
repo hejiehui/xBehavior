@@ -10,7 +10,7 @@ import com.xrosstools.xbehavior.def.ValueProperty;
 
 import static com.xrosstools.xbehavior.AsyncAction.*; 
 
-public class Delay extends Decorator {
+public class Wait extends Decorator {
 	private ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
 	private Property<Long> delay;
@@ -18,11 +18,11 @@ public class Delay extends Decorator {
 
 	private Future<StatusEnum> future;
 
-	public Delay(Long delay, TimeUnit timeUnit) {
+	public Wait(Long delay, TimeUnit timeUnit) {
 		this(ValueProperty.of(delay), timeUnit);
 	}
 
-	public Delay(Property<Long> delay, TimeUnit timeUnit) {
+	public Wait(Property<Long> delay, TimeUnit timeUnit) {
 		this.delay = delay;
 		this.timeUnit = timeUnit;
 	}

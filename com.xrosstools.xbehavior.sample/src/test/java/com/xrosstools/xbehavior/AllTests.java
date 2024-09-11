@@ -14,7 +14,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	
 	//Decorator
 	DecoratorTest.class,
-	DelayTest.class,
+	WaitTest.class,
 	ForceStatusTest.class,
 	InverterTest.class,
 	RepeatTest.class,

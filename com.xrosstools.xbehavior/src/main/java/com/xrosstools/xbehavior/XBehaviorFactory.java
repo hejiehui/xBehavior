@@ -166,7 +166,7 @@ public class XBehaviorFactory implements PropertyConstants {
         					TimeUnit.valueOf(get(PROP_TIME_UNIT)));
     			break;
             case WAIT:
-            	node = DecoratorDef.forceStatusDef(StatusEnum.SUCCESS);
+            	node = DecoratorDef.waitDef(get(PROP_TIMEOUT), TimeUnit.valueOf(get(PROP_TIME_UNIT)));
 				break;
             case FORCE_SUCCESS:
             	node = DecoratorDef.forceStatusDef(StatusEnum.SUCCESS);

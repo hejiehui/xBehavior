@@ -1,6 +1,10 @@
 package com.xrosstools.xbehavior.idea.editor.parts;
 
+import com.xrosstools.idea.gef.figures.AbstractAnchor;
+import com.xrosstools.idea.gef.figures.ChopboxAnchor;
 import com.xrosstools.idea.gef.figures.Figure;
+import com.xrosstools.idea.gef.figures.MidpointAnchor;
+import com.xrosstools.idea.gef.parts.AbstractConnectionEditPart;
 import com.xrosstools.idea.gef.parts.AbstractGraphicalEditPart;
 import com.xrosstools.idea.gef.parts.AbstractNodeEditPart;
 import com.xrosstools.xbehavior.idea.editor.figures.BehaviorNodeFigure;
@@ -16,6 +20,14 @@ public class BehaviorNodePart extends AbstractNodeEditPart {
 
     protected Figure createFigure() {
         return new BehaviorNodeFigure(getBehaviorNode().getType());
+    }
+
+    public AbstractAnchor getSourceConnectionAnchor(AbstractConnectionEditPart connectionEditPart) {
+        return new MidpointAnchor(this.getFigure(), true);
+    }
+
+    public AbstractAnchor getTargetConnectionAnchor(AbstractConnectionEditPart connectionEditPart) {
+        return new MidpointAnchor(this.getFigure(), true);
     }
 
     protected void refreshVisuals() {

@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.xrosstools.xbehavior.Behavior;
 import com.xrosstools.xbehavior.Decorator;
-import com.xrosstools.xbehavior.Delay;
+import com.xrosstools.xbehavior.Wait;
 import com.xrosstools.xbehavior.ForceStatus;
 import com.xrosstools.xbehavior.Inverter;
 import com.xrosstools.xbehavior.Repeat;
@@ -30,11 +30,11 @@ public abstract class DecoratorDef extends BehaviorDef {
 		return parent;
 	}
 	
-	public static BehaviorDef delayDef(final String delayExp, final String timeUnitExp) {
+	public static BehaviorDef waitDef(final String delayExp, final TimeUnit timeUnit) {
 		return new DecoratorDef() {
 			@Override
 			public Decorator createParent(PropertyParser parser) {
-				return new Delay(parser.parseLong(delayExp), TimeUnit.valueOf(timeUnitExp));
+				return new Wait(parser.parseLong(delayExp), timeUnit);
 			}
 		};
 	}

@@ -12,15 +12,15 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DelayTest {
-	private Delay test;
+public class WaitTest {
+	private Wait test;
 	private Blackboard bb;
 	private TestBehavior internal;
 	private final long delay = 100;
 
 	@Before
 	public void setup() {
-		test = new Delay(delay, TimeUnit.MILLISECONDS);
+		test = new Wait(delay, TimeUnit.MILLISECONDS);
 		internal = new TestBehavior();
 		test.setDecorated(internal);
 		bb = new Blackboard();
