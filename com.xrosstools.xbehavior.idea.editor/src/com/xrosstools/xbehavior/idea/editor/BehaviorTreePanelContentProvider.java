@@ -8,6 +8,7 @@ import com.xrosstools.idea.gef.AbstractPanelContentProvider;
 import com.xrosstools.idea.gef.ContextMenuProvider;
 import com.xrosstools.idea.gef.parts.EditPartFactory;
 import com.xrosstools.xbehavior.idea.editor.actions.BehaviorTreeMessage;
+import com.xrosstools.xbehavior.idea.editor.actions.GenerateHelperAction;
 import com.xrosstools.xbehavior.idea.editor.layout.LayoutAlgorithm;
 import com.xrosstools.xbehavior.idea.editor.menus.BehaviorTreeContextMenuProvider;
 import com.xrosstools.xbehavior.idea.editor.menus.BehaviorTreeOutlineContextMenuProvider;
@@ -60,14 +61,10 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
         palette.add(createConnectionButton());
 
         for(BehaviorNodeType type: BehaviorNodeType.values()) {
-            palette.add(createNodeButton(type.name(), type.getTypeIcon(), type.getTypeClass()));
+            palette.add(createNodeButton(type.getDisplayName(), type.getTypeIcon(), type.getTypeClass()));
         }
 
-//        palette.add(createPaletteButton(new DecisionTreeCreateDecisionAction(project, diagram), CREATE_NEW_DECISION, CREATE_NEW_DECISION_MSG));
-//        palette.add(createPaletteButton(new DecisionTreeCreateFactorAction(project, diagram), CREATE_NEW_FACTOR, CREATE_NEW_FACTOR_MSG));
-//        //Disable printing to console for now
-//        //palette.add(createPaletteButton(new DecisionTreeCodeGenAction(virtualFile, diagram, true), GEN_TEST_CODE_CONSOLE, GEN_TEST_CODE_IN_CONSOLE_MSG));
-//        palette.add(createPaletteButton(new DecisionTreeCodeGenAction(virtualFile, diagram, false), GEN_TEST_CODE_DIALOG, GEN_TEST_CODE_MSG));
+        palette.add(createPaletteButton(new GenerateHelperAction(project, virtualFile, diagram), GENERATE_HELPER_ICON, GENERATE_HELPER));
     }
 
     private JButton createConnectionButton() {

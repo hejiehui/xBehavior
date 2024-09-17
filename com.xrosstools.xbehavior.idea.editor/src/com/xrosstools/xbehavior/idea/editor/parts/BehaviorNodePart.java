@@ -7,9 +7,13 @@ import com.xrosstools.idea.gef.figures.MidpointAnchor;
 import com.xrosstools.idea.gef.parts.AbstractConnectionEditPart;
 import com.xrosstools.idea.gef.parts.AbstractGraphicalEditPart;
 import com.xrosstools.idea.gef.parts.AbstractNodeEditPart;
+import com.xrosstools.idea.gef.parts.EditPolicy;
+import com.xrosstools.idea.gef.policies.NodeEditPolicy;
 import com.xrosstools.xbehavior.idea.editor.figures.BehaviorNodeFigure;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorNode;
+import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;
 import com.xrosstools.xbehavior.idea.editor.model.PropertyConstants;
+import com.xrosstools.xbehavior.idea.editor.policies.BTNodeEditPolicy;
 
 import java.awt.*;
 
@@ -28,6 +32,11 @@ public class BehaviorNodePart extends AbstractNodeEditPart {
 
     public AbstractAnchor getTargetConnectionAnchor(AbstractConnectionEditPart connectionEditPart) {
         return new MidpointAnchor(this.getFigure(), true);
+    }
+
+    @Override
+    protected EditPolicy createEditPolicy() {
+        return new BTNodeEditPolicy((BehaviorTreeDiagram) getParent().getModel());
     }
 
     protected void refreshVisuals() {

@@ -24,4 +24,7 @@ public interface XbehaviorIcons {
     Icon CONDITION_ICON = IconLoader.getIcon("/icons/Condition.png", XbehaviorIcons.class);
     Icon FIXED_STATUS_ICON = IconLoader.getIcon("/icons/FixedStatus.png", XbehaviorIcons.class);
     Icon SLEEP_ICON = IconLoader.getIcon("/icons/Sleep.png", XbehaviorIcons.class);
+    Icon SUBTREE_ICON = IconLoader.getIcon("/icons/Subtree.png", XbehaviorIcons.class);
+
+    Icon GENERATE_HELPER_ICON = IconLoader.getIcon("/icons/generate_helper.png", XbehaviorIcons.class);
 }

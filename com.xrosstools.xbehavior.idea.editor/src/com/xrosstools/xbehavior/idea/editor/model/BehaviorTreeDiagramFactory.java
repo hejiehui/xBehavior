@@ -38,12 +38,25 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
     private PropertySourceXmlRegister<BehaviorNodeType> register = new PropertySourceXmlRegister<>();
 
     public BehaviorTreeDiagramFactory() {
+        //Actions
         register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
 
+        register.register(BehaviorNodeType.FIXED_STATUS).attributes(PROP_NAME, PROP_STATUS).nodes(PROP_DESCRIPTION);
+
+        register.register(BehaviorNodeType.SLEEP).attributes(PROP_NAME, PROP_COUNT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
+
+        register.register(BehaviorNodeType.SUBTREE).attributes(PROP_NAME, PROP_SUBTREE).nodes(PROP_DESCRIPTION);
+
+        //Composites
+        register.register(BehaviorNodeType.SEQUENCE).attributes(PROP_NAME, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
+
+        register.register(BehaviorNodeType.SELECTOR).attributes(PROP_NAME, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
+
         register.register(BehaviorNodeType.PARALLEL).attributes(PROP_NAME, PROP_COUNT, PROP_MODE).nodes(PROP_DESCRIPTION);
 
+        //Decorators
         register.register(BehaviorNodeType.REPEAT).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.RETRY).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
@@ -51,10 +64,6 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
         register.register(BehaviorNodeType.WAIT).attributes(PROP_NAME, PROP_TIMEOUT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
         PropertySourceXmlAccessor accessor = new PropertySourceXmlAccessor().attributes(PROP_NAME).nodes(PROP_DESCRIPTION);
-
-        register.register(BehaviorNodeType.SEQUENCE, accessor);
-
-        register.register(BehaviorNodeType.SELECTOR, accessor);
 
         register.register(BehaviorNodeType.INVERTER, accessor);
 
@@ -71,8 +80,6 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
 
         List<BehaviorNode> nodes = createNodes(doc, diagram);
         linkNode(doc, nodes);
-        diagram.getChildren().addAll(nodes);
-
 
         return diagram;
     }
@@ -91,16 +98,26 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
 
             try {
                 node = (BehaviorNode)type.getTypeClass().newInstance();
+
+                if(type == BehaviorNodeType.SUBTREE)
+                    ((SubtreeNode)node).setDiagram(diagram);
             } catch (Throwable e) {
                 throw new IllegalArgumentException(type.getTypeClass().getCanonicalName());
             }
 
+            nodes.add(node);
+        }
+        diagram.getChildren().addAll(nodes);
+
+        //This is because subtree need to know all root nodes' names
+        for (int i = 0; i < nodeNodes.size(); i++) {
+            BehaviorNode node = nodes.get(i);
+            Node nodeNode = nodeNodes.get(i);
+            BehaviorNodeType type = node.getType();
             if(register.contains(type))
                 register.readProperties(type, nodeNode, node);
             else
                 throw new IllegalArgumentException(type.name());
-
-            nodes.add(node);
         }
 
         return nodes;

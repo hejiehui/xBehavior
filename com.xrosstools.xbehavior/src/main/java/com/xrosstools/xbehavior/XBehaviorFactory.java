@@ -6,9 +6,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -24,23 +22,21 @@ import com.xrosstools.xbehavior.def.BehaviorDef;
 import com.xrosstools.xbehavior.def.CompositeDef;
 import com.xrosstools.xbehavior.def.DecoratorDef;
 import com.xrosstools.xbehavior.def.PropertyConstants;
-import com.xrosstools.xbehavior.def.PropertyParser;
 
 public class XBehaviorFactory implements PropertyConstants {
-    private static final String BEHAVIOR_TREE = "behavior_tree";
-    private static final String DESCRIPTION = "description";
-
     private static final String NODES = "nodes";
 
     private static final String CONNECTIONS = "connections";
-    private static final String CONNECTION = "connection";
     private static final String SOURCE_INDEX = "source_index";
     private static final String TARGET_INDEX = "target_index";
 
     private static final ConcurrentHashMap<String, XBehaviorFactory> factories = new ConcurrentHashMap<>();
-	private String description;
 	private Evaluator evaluator;
-	private Map<String, BehaviorDef> definitions = new HashMap<>();
+	private BehaviorDef treeDef;
+	
+	public Behavior create(String name) {
+		return treeDef.create(null);
+	}
     
 	public static XBehaviorFactory load(URL url) throws Exception {
 	    String path = url.toString();
@@ -115,11 +111,11 @@ public class XBehaviorFactory implements PropertyConstants {
 		Element root = doc.getDocumentElement();
 		//Node root = doc.getElementsByTagName(BEHAVIOR_TREE).item(0);
 		
-		description = getChildNodeText(root, PROP_DESCRIPTION);
+		String description = getChildNodeText(root, PROP_DESCRIPTION);
 		String className = root.getAttribute(PROP_EVALUATOR);
 		evaluator = (Evaluator)Class.forName(className).getDeclaredConstructor().newInstance();
 		List<BehaviorDef> nodes = readNodes(doc);
-		linkNodes(doc, nodes);
+		treeDef = linkNodes(doc, nodes);
 	}
 
 	private List<BehaviorDef> readNodes(Document doc) {
@@ -206,10 +202,11 @@ public class XBehaviorFactory implements PropertyConstants {
 		return nodes;
 	}
 	
-	private void linkNodes(Document doc, List<BehaviorDef> nodes) {
+	private BehaviorDef linkNodes(Document doc, List<BehaviorDef> nodes) {
         if (doc.getElementsByTagName(CONNECTIONS).getLength() == 0)
-            return;
+        	return nodes.isEmpty()? null : nodes.get(0);
 
+        List<BehaviorDef> topNodes = new ArrayList<>(nodes);
         List<Node> connectionNodes = getValidChildNodes(doc.getElementsByTagName(CONNECTIONS).item(0));
         for (int i = 0; i < connectionNodes.size(); i++) {
             Node connectionNode = connectionNodes.get(i);
@@ -220,7 +217,10 @@ public class XBehaviorFactory implements PropertyConstants {
             	((CompositeDef) parent).getChildDefs().add(child);
             else
             	((DecoratorDef)parent).setChildDef(child);
+            topNodes.remove(child);
         }
+        
+        return topNodes.get(0);
 	}
 	
 	private int getIntAttribute(Node node, String attributeName, int defaultValue){

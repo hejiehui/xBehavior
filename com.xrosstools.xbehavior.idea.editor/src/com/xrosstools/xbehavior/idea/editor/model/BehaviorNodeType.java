@@ -19,7 +19,8 @@ public enum BehaviorNodeType implements XbehaviorIcons {
     CONDITION(ConditionNode.class, CONDITION_ICON),
     ACTION(ActionNode.class, ACTION_ICON),
     FIXED_STATUS(FixedStatusNode.class, FIXED_STATUS_ICON),
-    SLEEP(SleepNode.class, SLEEP_ICON);
+    SLEEP(SleepNode.class, SLEEP_ICON),
+    SUBTREE(SubtreeNode.class, SUBTREE_ICON);
 
     private String displayName;
     private String nodeName;

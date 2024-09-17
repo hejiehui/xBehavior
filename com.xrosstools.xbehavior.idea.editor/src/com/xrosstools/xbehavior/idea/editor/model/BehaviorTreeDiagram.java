@@ -2,7 +2,6 @@ package com.xrosstools.xbehavior.idea.editor.model;
 
 import com.xrosstools.idea.gef.model.Diagram;
 import com.xrosstools.idea.gef.util.PropertyEntry;
-import com.xrosstools.idea.gef.util.TextPropertyDescriptor;
 
 import java.util.ArrayList;
 import java.util.List;

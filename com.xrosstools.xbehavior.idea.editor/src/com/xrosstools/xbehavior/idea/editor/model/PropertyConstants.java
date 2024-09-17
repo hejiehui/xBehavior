@@ -14,6 +14,7 @@ public interface PropertyConstants {
     String PROP_TIMEOUT = "Timeout";
     String PROP_TIME_UNIT = "Time unit";
     String PROP_IMPLEMENTATION = "Implementation";
+    String PROP_SUBTREE = "Subtree";
     String PROP_ASYNCHRONOUS = "Asynchronous";
     String PROP_STATUS = "Status";
     String PROP_EVALUATOR = "evaluator";

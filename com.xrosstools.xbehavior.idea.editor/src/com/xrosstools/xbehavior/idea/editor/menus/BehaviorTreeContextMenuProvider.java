@@ -2,42 +2,36 @@ package com.xrosstools.xbehavior.idea.editor.menus;
 
 import com.intellij.openapi.project.Project;
 import com.xrosstools.idea.gef.ContextMenuProvider;
+import com.xrosstools.idea.gef.actions.ImplementationUtil;
 import com.xrosstools.idea.gef.parts.EditPart;
 import com.xrosstools.xbehavior.idea.editor.actions.BehaviorTreeMessage;
-import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;
+import com.xrosstools.xbehavior.idea.editor.model.*;
+import com.xrosstools.xbehavior.idea.editor.parts.BehaviorNodePart;
 
 import javax.swing.*;
 
-public class BehaviorTreeContextMenuProvider extends ContextMenuProvider implements BehaviorTreeMessage {
-//    private NodeContextMenuProvider nodeMenuProvider;
-//    private ConnectionContextMenuProvider connMenuProvider;
-//    private ExpressionContextMenuProvider expMenuProvider;
-//    private DiagramContextMenuProvider diagramMenuProvider;
-
-
+public class BehaviorTreeContextMenuProvider extends ContextMenuProvider implements BehaviorTreeMessage, PropertyConstants {
+    private Project project;
+    private BehaviorTreeDiagram diagram;
     public BehaviorTreeContextMenuProvider(Project project, BehaviorTreeDiagram diagram) {
-//
-//        nodeMenuProvider = new NodeContextMenuProvider(project, diagram);
-//        expMenuProvider = new ExpressionContextMenuProvider(project, diagram);
-//        connMenuProvider = new ConnectionContextMenuProvider(project, diagram);
-//        diagramMenuProvider = new DiagramContextMenuProvider(project, diagram);
+        this.project = project;
+        this.diagram = diagram;
     }
 
     public JPopupMenu buildContextMenu(Object selected) {
         EditPart part = (EditPart)selected;
-        // Add standard action groups to the menu
         JPopupMenu menu = new JPopupMenu();
-//        if(part instanceof DecisionTreeNodeConnectionPart) {
-//            connMenuProvider.buildContextMenu(menu, (DecisionTreeNodeConnectionPart)part);
-//        }else if(part instanceof DecisionTreeNodePart) {
-//            nodeMenuProvider.buildContextMenu(menu, (DecisionTreeNodePart)part);
-//        }else if(part instanceof BaseExpressionPart) {
-//            expMenuProvider.buildContextMenu(menu, (BaseExpressionPart)part);
-//        }else if(part instanceof DecisionTreeDiagramPart) {
-//            diagramMenuProvider.buildContextMenu(menu, (DecisionTreeDiagramPart)part);
-//        }
+        if(part instanceof BehaviorNodePart) {
+            builNodedContextMenu(menu, (BehaviorNodePart)part);
+        }
 
         return menu;
     }
 
+    private void builNodedContextMenu(JPopupMenu menu, BehaviorNodePart part) {
+        BehaviorNode node = part.getBehaviorNode();
+        if(node.getType() == BehaviorNodeType.ACTION) {
+            ImplementationUtil.buildImplementationMenu(project, menu, node, PROP_IMPLEMENTATION, false);
+        }
+    }
 }
