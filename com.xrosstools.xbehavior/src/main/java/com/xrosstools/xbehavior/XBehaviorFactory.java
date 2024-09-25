@@ -6,7 +6,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -32,10 +34,10 @@ public class XBehaviorFactory implements PropertyConstants {
 
     private static final ConcurrentHashMap<String, XBehaviorFactory> factories = new ConcurrentHashMap<>();
 	private Evaluator evaluator;
-	private BehaviorDef treeDef;
+	private Map<String, BehaviorDef> treeDefs = new HashMap<>();
 	
 	public Behavior create(String name) {
-		return treeDef.create(null);
+		return treeDefs.get(name).create();
 	}
     
 	public static XBehaviorFactory load(URL url) throws Exception {
@@ -115,7 +117,7 @@ public class XBehaviorFactory implements PropertyConstants {
 		String className = root.getAttribute(PROP_EVALUATOR);
 		evaluator = (Evaluator)Class.forName(className).getDeclaredConstructor().newInstance();
 		List<BehaviorDef> nodes = readNodes(doc);
-		treeDef = linkNodes(doc, nodes);
+		linkNodes(doc, nodes);
 	}
 
 	private List<BehaviorDef> readNodes(Document doc) {
@@ -192,19 +194,24 @@ public class XBehaviorFactory implements PropertyConstants {
             	node = BehaviorDef.sleepDef(get(PROP_COUNT), 
     					TimeUnit.valueOf(get(PROP_TIME_UNIT)));
 				break;
+            case SUBTREE:
+            	node = BehaviorDef.subtreeDef(treeDefs, get(PROP_NAME));
+				break;
 			default:
 				break;
 			}
 
+            node.setName(get(PROP_NAME));
+            node.setDescription(get(PROP_DESCRIPTION));
             nodes.add(node);
         }
 
 		return nodes;
 	}
 	
-	private BehaviorDef linkNodes(Document doc, List<BehaviorDef> nodes) {
+	private void linkNodes(Document doc, List<BehaviorDef> nodes) {
         if (doc.getElementsByTagName(CONNECTIONS).getLength() == 0)
-        	return nodes.isEmpty()? null : nodes.get(0);
+        	return;
 
         List<BehaviorDef> topNodes = new ArrayList<>(nodes);
         List<Node> connectionNodes = getValidChildNodes(doc.getElementsByTagName(CONNECTIONS).item(0));
@@ -220,14 +227,11 @@ public class XBehaviorFactory implements PropertyConstants {
             topNodes.remove(child);
         }
         
-        return topNodes.get(0);
+        for(BehaviorDef def: topNodes)
+        	if(def.getName() != null)
+        		treeDefs.put(def.getName(), def);
 	}
 	
-	private int getIntAttribute(Node node, String attributeName, int defaultValue){
-        String valueStr = getAttribute(node, attributeName);
-        return valueStr == null ? defaultValue : Integer.parseInt(valueStr);
-    }
-        
     private int getIntAttribute(Node node, String attributeName){
         return Integer.parseInt(getAttribute(node, attributeName));
     }

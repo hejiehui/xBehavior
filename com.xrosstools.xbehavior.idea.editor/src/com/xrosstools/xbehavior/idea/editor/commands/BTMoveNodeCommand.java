@@ -18,19 +18,21 @@ public class BTMoveNodeCommand extends MoveNodeCommand {
     @Override
     public void postExecute() {
         BehaviorNode node = (BehaviorNode)getNode();
-        reorderFromChild(diagram, node);
-    }
-
-    public static void reorderFromChild(BehaviorTreeDiagram diagram, BehaviorNode child) {
-        if(child.getInputs().size() != 1)
-            return;
-
-        reorderChildren(diagram, child.getInputs().get(0).getSource());
+        if(node.getInputs().size() == 1)
+            reorderChildren(diagram, node.getInputs().get(0).getSource());
+        else
+            reorderRoot(diagram);
     }
 
     public static void reorderChildren(BehaviorTreeDiagram diagram, BehaviorNode parent) {
         List<BehaviorNodeConnection> outputs = parent.getOutputs();
         outputs.sort(Comparator.comparingInt(o -> o.getTarget().getLocation().x));
+        diagram.firePropertyChange(BehaviorTreeDiagram.PROP_LAYOUT);
+    }
+
+    public static void reorderRoot(BehaviorTreeDiagram diagram) {
+        List<BehaviorNode> nodes = diagram.getChildren();
+        nodes.sort(Comparator.comparingInt(o -> o.getInputs().size() == 0 ? o.getLocation().y : 0));
         diagram.firePropertyChange(BehaviorTreeDiagram.PROP_LAYOUT);
     }
 }

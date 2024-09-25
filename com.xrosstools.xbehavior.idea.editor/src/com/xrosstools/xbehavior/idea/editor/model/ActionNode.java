@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class ActionNode extends BehaviorNode {
     private PropertyEntry<String> implementation = stringProperty(PROP_IMPLEMENTATION);
     private PropertyEntry<Boolean> asynchronous = booleanProperty(PROP_ASYNCHRONOUS, false);
-    private PropertyEntry<Long> timeout = longProperty(PROP_TIMEOUT, DEFAULT_COUNT);
+    private PropertyEntry<String> timeout = stringProperty(PROP_TIMEOUT, DEFAULT_COUNT_STR);
     private PropertyEntry<TimeUnit> timeUnit = enumProperty(PROP_TIME_UNIT, DEFAULT_TIME_UNIT, TimeUnit.values());
 
     public ActionNode() {

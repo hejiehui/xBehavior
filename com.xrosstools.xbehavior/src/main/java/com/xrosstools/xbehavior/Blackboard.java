@@ -40,4 +40,8 @@ public class Blackboard {
 	public void clear() {
 		entries.clear();
 	}
+	
+	public int size() {
+		return entries.size();
+	}
 }

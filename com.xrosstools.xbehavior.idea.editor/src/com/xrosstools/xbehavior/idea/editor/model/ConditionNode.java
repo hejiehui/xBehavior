@@ -15,7 +15,7 @@ public class ConditionNode extends BehaviorNode{
         super(BehaviorNodeType.CONDITION);
         setOutputLimit(0);
         register(mode);
-        register(expression);
+        register(expression, ()-> getMode() == Mode.EXPRESSION);
         register(implementation, ()-> getMode() == Mode.CALLBACK);
     }
 

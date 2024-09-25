@@ -5,7 +5,7 @@ import com.xrosstools.xbehavior.XBehaviorFactory;
 
 /**
     IMPORTANT NOTE!
-    This is generated code based on Xross Behavior Tree model file !MODEL_FILE!.
+    This is generated code based on Xross Behavior Tree model file "!MODEL_PATH!".
     In case the model file changes, regenerate this file.
     Do Not Modify It.
 

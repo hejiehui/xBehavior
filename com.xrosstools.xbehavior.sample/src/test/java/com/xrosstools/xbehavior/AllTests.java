@@ -25,6 +25,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	SequenceTest.class,
 	SelectorTest.class,
 	ParallelTest.class,
+	
+	PropertyParserTest.class,
 })
 public class AllTests {
 

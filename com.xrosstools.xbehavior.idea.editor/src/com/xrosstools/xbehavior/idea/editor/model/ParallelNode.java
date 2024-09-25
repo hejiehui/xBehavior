@@ -10,7 +10,7 @@ public class ParallelNode extends CompositeNode {
     }
 
     private PropertyEntry<Mode> mode = enumProperty(PROP_MODE, DEFAULT_PARALLEL_MODE, Mode.values());
-    private PropertyEntry<Integer> count = intProperty(PROP_COUNT, DEFAULT_COUNT);
+    private PropertyEntry<String> count = stringProperty(PROP_COUNT, DEFAULT_COUNT_STR);
 
     public ParallelNode() {
         super(BehaviorNodeType.PARALLEL);
@@ -24,13 +24,5 @@ public class ParallelNode extends CompositeNode {
 
     public void setMode(Mode _mode) {
         this.mode.set(_mode);
-    }
-
-    public Integer getCount() {
-        return count.get();
-    }
-
-    public void setCount(Integer _count) {
-        this.count.set(_count);
     }
 }

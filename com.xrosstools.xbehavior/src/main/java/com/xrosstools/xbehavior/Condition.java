@@ -1,11 +1,13 @@
 package com.xrosstools.xbehavior;
 
-public interface Condition {
+public abstract class Condition implements Behavior {
     public enum Mode {
         EXPRESSION, CALLBACK
     }
 
-    boolean check(Blackboard context);
+    public abstract boolean check(Blackboard context);
 
-	void reset();
+    public final StatusEnum tick(Blackboard context) {
+		return check(context) ? StatusEnum.SUCCESS : StatusEnum .FAILURE;
+	}
 }

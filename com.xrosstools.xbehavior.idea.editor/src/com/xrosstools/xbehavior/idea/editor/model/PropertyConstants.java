@@ -22,11 +22,10 @@ public interface PropertyConstants {
     int DEFAULT_HEIGHT = 50;
     ProcessMode DEFAULT_PROCESS_MODE = ProcessMode.MAX_ATTEMPT;
     Boolean DEFAULT_REPEAT_UNTIL_FAILURE = Boolean.TRUE;
-    Boolean DEFAULT_SKIP_RUNNING_CHILD = Boolean.TRUE;
     Boolean DEFAULT_REACTIVE = Boolean.FALSE;
 
     TimeUnit DEFAULT_TIME_UNIT = TimeUnit.SECONDS;
     ConditionNode.Mode DEFAULT_CONDITION_MODE = ConditionNode.Mode.EXPRESSION;
     ParallelNode.Mode DEFAULT_PARALLEL_MODE = ParallelNode.Mode.ALL;
-    int DEFAULT_COUNT = 1;
+    String DEFAULT_COUNT_STR = String.valueOf(1);
 }

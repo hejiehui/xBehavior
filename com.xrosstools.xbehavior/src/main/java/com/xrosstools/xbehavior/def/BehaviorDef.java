@@ -1,12 +1,11 @@
 package com.xrosstools.xbehavior.def;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import com.xrosstools.xbehavior.Action;
 import com.xrosstools.xbehavior.AsyncAction;
 import com.xrosstools.xbehavior.Behavior;
-import com.xrosstools.xbehavior.Condition;
-import com.xrosstools.xbehavior.ConditionWrapper;
 import com.xrosstools.xbehavior.Evaluator;
 import com.xrosstools.xbehavior.ExpressionCondition;
 import com.xrosstools.xbehavior.FixedStatus;
@@ -33,12 +32,14 @@ public abstract class BehaviorDef implements PropertyConstants {
 		return description;
 	}
 
-	public abstract Behavior create(PropertyParser parser);
+	public abstract Behavior create();
+	
+	private static PropertyParser parser = new PropertyParser();
 	
 	public static BehaviorDef actionDef(final String implementation) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
+			public Behavior create() {
 				return InstatnceFactory.getInstance(implementation);
 			}
 		};
@@ -48,7 +49,7 @@ public abstract class BehaviorDef implements PropertyConstants {
 	public static BehaviorDef asynchActionDef(final String implementation, final String delayExp, final TimeUnit timeUnit) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
+			public Behavior create() {
 				Action act = InstatnceFactory.getInstance(implementation);
 				return new AsyncAction(parser.parseLong(delayExp), timeUnit, act);
 			}
@@ -58,7 +59,7 @@ public abstract class BehaviorDef implements PropertyConstants {
 	public static BehaviorDef sleepDef(final String delayExp, final TimeUnit timeUnit) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
+			public Behavior create() {
 				return new Sleep(parser.parseLong(delayExp), timeUnit);
 			}
 		};
@@ -67,7 +68,7 @@ public abstract class BehaviorDef implements PropertyConstants {
 	public static BehaviorDef fixedStatusDef(final String statusExp) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
+			public Behavior create() {
 				return new FixedStatus(StatusEnum.valueOf(statusExp));
 			}
 		};
@@ -76,8 +77,8 @@ public abstract class BehaviorDef implements PropertyConstants {
 	public static BehaviorDef callbackConditionDef(final String implementation) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
-				return new ConditionWrapper((Condition)InstatnceFactory.getInstance(implementation));
+			public Behavior create() {
+				return InstatnceFactory.getInstance(implementation);
 			}
 		};
 	}	
@@ -85,9 +86,18 @@ public abstract class BehaviorDef implements PropertyConstants {
 	public static BehaviorDef exprConditionDef(final Evaluator evaluator, final String expressionStr) {
 		return new BehaviorDef() {
 			@Override
-			public Behavior create(PropertyParser parser) {
+			public Behavior create() {
 				return new ExpressionCondition(evaluator, expressionStr);
 			}
 		};
-	}	
+	}
+	
+	public static BehaviorDef subtreeDef(final Map<String, BehaviorDef> treeDefs, final String name) {
+		return new BehaviorDef() {
+			@Override
+			public Behavior create() {
+				return treeDefs.get(name).create();
+			}
+		};
+	}
 }

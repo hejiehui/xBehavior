@@ -15,7 +15,7 @@ public class LayoutAlgorithm {
 	private int nodeHeight;
 	private float alignment;
 
-	boolean useNew = true;
+	private int maxHeight;
 
 	public void layout(BehaviorTreeDiagram diagram) {
 		horizantalSpace = diagram.isHorizantal() ? diagram.getVerticalSpace() : diagram.getHorizantalSpace();
@@ -31,10 +31,12 @@ public class LayoutAlgorithm {
 				nextPos += layoutHorizanta(margin, nextPos, node, 0) + verticalSpace;
 			}
 		} else {
+			maxHeight = 0;
 			int branchWidth = 0;
 			int nextLeftPos = margin;
 			for (BehaviorNode node : diagram.getRoots()) {
-				branchWidth += layoutVertical(nextLeftPos + branchWidth, node, 0) + horizantalSpace;
+				layoutVertical(maxHeight, nextLeftPos + branchWidth, node, 0);
+				maxHeight += verticalSpace;
 			}
 		}
 	}
@@ -62,7 +64,7 @@ public class LayoutAlgorithm {
 		return branchHeight;
 	}
 
-	private int layoutVertical(int leftPos, BehaviorNode node, int depth) {
+	private int layoutVertical(int rootY, int leftPos, BehaviorNode node, int depth) {
 		int conditionWidth = getConnWidth(node.getInputs());
 		int nodeWidth = getNodeWidth(node);
 		int condiNodeWidth = Math.max(conditionWidth, nodeWidth);
@@ -70,12 +72,12 @@ public class LayoutAlgorithm {
 		int branchWidth = 0;
 		int nextLeftPos = leftPos;
 		for (BehaviorNodeConnection path : node.getOutputs()) {
-			branchWidth += layoutVertical(nextLeftPos + branchWidth, path.getTarget(), depth + 1) + horizantalSpace;
+			branchWidth += layoutVertical(rootY, nextLeftPos + branchWidth, path.getTarget(), depth + 1) + horizantalSpace;
 		}
 		branchWidth = branchWidth == 0 ? 0 : branchWidth - horizantalSpace;
 
 		int x = leftPos + locateLower(condiNodeWidth, nodeWidth);
-		int y = margin + (depth) * (verticalSpace + nodeHeight);
+		int y = rootY + margin + (depth) * (verticalSpace + nodeHeight);
 
 		/**
 		 *   conditionconditionconditioncondition
@@ -91,6 +93,8 @@ public class LayoutAlgorithm {
 		//Make sure connection get refreshed
 //		if(node.getInputs().size() != 0)
 //			node.getInputs().get(0).layout();
+
+		maxHeight = maxHeight > y + nodeHeight ? maxHeight : y + nodeHeight;
 
 		return Math.max(branchWidth, condiNodeWidth);
 	}

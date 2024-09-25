@@ -39,9 +39,9 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
 
     public BehaviorTreeDiagramFactory() {
         //Actions
-        register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_ASYNCHRONOUS, PROP_TIMEOUT, PROP_TIME_UNIT, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_EXPRESSION, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.FIXED_STATUS).attributes(PROP_NAME, PROP_STATUS).nodes(PROP_DESCRIPTION);
 
@@ -57,7 +57,7 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
         register.register(BehaviorNodeType.PARALLEL).attributes(PROP_NAME, PROP_COUNT, PROP_MODE).nodes(PROP_DESCRIPTION);
 
         //Decorators
-        register.register(BehaviorNodeType.REPEAT).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.REPEAT).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT, PROP_REPEAT_UNTIL_FAILURE).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.RETRY).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
@@ -105,19 +105,14 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
                 throw new IllegalArgumentException(type.getTypeClass().getCanonicalName());
             }
 
-            nodes.add(node);
-        }
-        diagram.getChildren().addAll(nodes);
+            diagram.addChild(node);
 
-        //This is because subtree need to know all root nodes' names
-        for (int i = 0; i < nodeNodes.size(); i++) {
-            BehaviorNode node = nodes.get(i);
-            Node nodeNode = nodeNodes.get(i);
-            BehaviorNodeType type = node.getType();
             if(register.contains(type))
                 register.readProperties(type, nodeNode, node);
             else
                 throw new IllegalArgumentException(type.name());
+
+            nodes.add(node);
         }
 
         return nodes;

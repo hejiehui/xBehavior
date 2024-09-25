@@ -41,7 +41,7 @@ public class GenerateHelperAction extends Action implements BehaviorTreeMessage 
         replace(codeBuf, "!PACKAGE!", getValue("com.xrosstools.xbehavior"));
         replace(codeBuf, "!DESCRIPTION!", getValue(diagram.getDescription()));
         replace(codeBuf, "!LAST_GENERATE_TIME!", ZonedDateTime.now().toString());
-        replace(codeBuf, "!TEST_CLASS!", toClassName(file.getName()));
+        replace(codeBuf, "!TEST_CLASS!", toClassName(file.getNameWithoutExtension()));
         replace(codeBuf, "!MODEL_PATH!", findResourcesPath(project, file));
 
         replace(codeBuf, "!TREE_DEFINITIONS!", "\n" + generateBody().toString());

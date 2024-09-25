@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.xrosstools.xbehavior.editor</id>
   <name>Xross Behavior Tree Edtitor</name>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <vendor email="he_jiehui@163.com" url="https://www.xrosstools.com">Xross Tools</vendor>
 
   <description><![CDATA[
@@ -24,6 +24,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileEditorProvider implementation="com.xrosstools.xbehavior.idea.editor.BehaviorTreeEditorProvider"/>
     <fileTypeFactory implementation="com.xrosstools.xbehavior.idea.editor.XbehaviorFileTypeFactory"/>
+    <psi.referenceContributor implementation="com.xrosstools.xbehavior.idea.editor.references.XbehaviorReferenceContributor" language="XML"/>
   </extensions>
 
   <actions>

@@ -12,7 +12,7 @@ import com.xrosstools.xbehavior.Retry;
 import com.xrosstools.xbehavior.StatusEnum;
 
 public abstract class DecoratorDef extends BehaviorDef {
-	abstract public Decorator createParent(PropertyParser parser);
+	abstract public Decorator createParent();
 
 	private BehaviorDef childDef;
 
@@ -24,16 +24,18 @@ public abstract class DecoratorDef extends BehaviorDef {
 		this.childDef = childDef;
 	}
 	
-	public Behavior create(PropertyParser parser) {
-		Decorator parent = createParent(parser);
-		parent.setDecorated(childDef.create(parser));
+	public Behavior create() {
+		Decorator parent = createParent();
+		parent.setDecorated(childDef.create());
 		return parent;
 	}
 	
+	private static PropertyParser parser = new PropertyParser();
+
 	public static BehaviorDef waitDef(final String delayExp, final TimeUnit timeUnit) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				return new Wait(parser.parseLong(delayExp), timeUnit);
 			}
 		};
@@ -42,7 +44,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef forceStatusDef(final StatusEnum status) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				return new ForceStatus(status);
 			}
 		};
@@ -51,7 +53,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef inverterDef() {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				return new Inverter();
 			}
 		};
@@ -60,7 +62,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef repeatDef(final String delayExp, final TimeUnit timeUnit, final boolean repeatUntilFailure) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				Repeat rep = new Repeat(parser.parseLong(delayExp), timeUnit);
 				rep.setRepeatUntilFailure(repeatUntilFailure);
 				return rep;
@@ -71,7 +73,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef repeatDef(final String maxAttemptExp, final boolean repeatUntilFailure) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				Repeat rep = new Repeat(parser.parseInteger(maxAttemptExp));
 				rep.setRepeatUntilFailure(repeatUntilFailure);
 				return rep;
@@ -82,7 +84,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef retryDef(final String delayExp, final TimeUnit timeUnit) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				return new Retry(parser.parseLong(delayExp), timeUnit);
 			}
 		};
@@ -91,7 +93,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 	public static BehaviorDef retryDef(final String maxAttemptExp) {
 		return new DecoratorDef() {
 			@Override
-			public Decorator createParent(PropertyParser parser) {
+			public Decorator createParent() {
 				return new Retry(parser.parseInteger(maxAttemptExp));
 			}
 		};

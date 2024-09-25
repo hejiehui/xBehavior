@@ -32,6 +32,11 @@ public class BehaviorTreeContextMenuProvider extends ContextMenuProvider impleme
         BehaviorNode node = part.getBehaviorNode();
         if(node.getType() == BehaviorNodeType.ACTION) {
             ImplementationUtil.buildImplementationMenu(project, menu, node, PROP_IMPLEMENTATION, false);
+            return;
+        }
+
+        if(node.getType() == BehaviorNodeType.CONDITION && ((ConditionNode)node).getMode() == ConditionNode.Mode.CALLBACK) {
+            ImplementationUtil.buildImplementationMenu(project, menu, node, PROP_IMPLEMENTATION, false);
         }
     }
 }

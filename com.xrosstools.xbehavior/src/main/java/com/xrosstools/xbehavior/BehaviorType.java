@@ -17,7 +17,8 @@ public enum BehaviorType implements PropertyConstants {
     CONDITION,
     ACTION,
     FIXED_STATUS,
-	SLEEP;
+	SLEEP,
+	SUBTREE;
 
     private String nodeName;
 

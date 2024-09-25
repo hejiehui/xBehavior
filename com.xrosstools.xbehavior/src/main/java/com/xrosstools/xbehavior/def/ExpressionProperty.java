@@ -18,6 +18,6 @@ public class ExpressionProperty<T> implements Property<T>{
 	}
 	
 	public static <T> ExpressionProperty<T> of(Evaluator evaluator, String expStr) {
-		return new ExpressionProperty<T>(evaluator, evaluator.parse(expStr));
+		return new ExpressionProperty<T>(evaluator, evaluator.compile(expStr));
 	}
 }
