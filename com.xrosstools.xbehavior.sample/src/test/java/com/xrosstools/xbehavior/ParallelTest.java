@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.def.ValueProperty;
+
 public class ParallelTest {
 	private Parallel test;
 	private TestBehavior a, b, c;
@@ -36,6 +38,22 @@ public class ParallelTest {
 	}
 
 	@Test
+	public void testSuccessAll() {
+		test = new Parallel(Parallel.Mode.ALL, ValueProperty.of(100));
+		test.add(a);
+		test.add(b);
+		test.add(c);
+		a.setMaxAttempt(3);
+		b.setMaxAttempt(2);
+		c.setMaxAttempt(1);
+		
+		for(int i = 0; i < 3; i++) {
+			assertEquals(StatusEnum.RUNNING, test.tick(bb));
+		}
+		assertEquals(StatusEnum.SUCCESS, test.tick(bb));
+	}
+
+	@Test
 	public void testSuccessFast() {
 		test.setMinSuccess(1);
 		a.setMaxAttempt(3);
@@ -45,6 +63,33 @@ public class ParallelTest {
 		assertEquals(StatusEnum.SUCCESS, test.tick(bb));
 		
 		test.setMinSuccess(2);
+		assertEquals(StatusEnum.RUNNING, test.tick(bb));
+		assertEquals(StatusEnum.RUNNING, test.tick(bb));
+		assertEquals(StatusEnum.SUCCESS, test.tick(bb));
+	}
+
+	@Test
+	public void testSuccessAny() {
+		test = new Parallel(Parallel.Mode.ANY, ValueProperty.of(100));
+		test.add(a);
+		test.add(b);
+		test.add(c);
+		a.setMaxAttempt(3);
+		b.setMaxAttempt(2);
+		c.setMaxAttempt(0);
+		
+		assertEquals(StatusEnum.SUCCESS, test.tick(bb));
+	}
+
+	@Test
+	public void testSuccessSome() {
+		test = new Parallel(Parallel.Mode.SOME, ValueProperty.of(2));
+		test.add(a);
+		test.add(b);
+		test.add(c);
+		a.setMaxAttempt(3);
+		b.setMaxAttempt(2);
+		c.setMaxAttempt(0);
 		assertEquals(StatusEnum.RUNNING, test.tick(bb));
 		assertEquals(StatusEnum.RUNNING, test.tick(bb));
 		assertEquals(StatusEnum.SUCCESS, test.tick(bb));

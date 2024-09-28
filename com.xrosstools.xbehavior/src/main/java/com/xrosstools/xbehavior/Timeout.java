@@ -9,10 +9,6 @@ public class Timeout {
 	
 	private long normalizedDelay;
 	
-	public static final Timeout NEVER = new Timeout(-1, TimeUnit.SECONDS) {
-		public boolean isTimeout() {return false;}		
-	};
-
 	public Timeout(long delay, TimeUnit timeUnit) {
 		this.delay = delay;
 		this.timeUnit = timeUnit;
@@ -20,6 +16,9 @@ public class Timeout {
 	}
 
 	private void normalize() {
+		if(delay < 0)
+			return;
+
 		if(timeUnit == TimeUnit.NANOSECONDS || timeUnit == TimeUnit.MICROSECONDS)
 			normalizedDelay = TimeUnit.NANOSECONDS.convert(delay, timeUnit);
 		else
@@ -46,6 +45,9 @@ public class Timeout {
 	}
 
 	public boolean isTimeout() {
+		if(delay < 0)
+			return false;
+
 		if(timeUnit == TimeUnit.NANOSECONDS || timeUnit == TimeUnit.MICROSECONDS)
 			return System.nanoTime() - startTime >= normalizedDelay;
 		else

@@ -2,6 +2,8 @@ package com.xrosstools.xbehavior;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,16 +39,22 @@ public class XBehaviorFactory implements PropertyConstants {
 	private Map<String, BehaviorDef> treeDefs = new HashMap<>();
 	
 	public Behavior create(String name) {
+		if(!treeDefs.containsKey(name))
+			throw new IllegalArgumentException("Can not find behavior: " + name);
 		return treeDefs.get(name).create();
 	}
     
-	public static XBehaviorFactory load(URL url) throws Exception {
+	public static XBehaviorFactory load(URL url) {
 	    String path = url.toString();
 	    
 	    if(isLoaded(url.toString()))
 	        return factories.get(path);
 	    
-        return getFactory(path, load(url.openStream()));
+        try {
+			return getFactory(path, load(url.openStream()));
+		} catch (IOException e) {
+			throw new IllegalArgumentException(e);
+		}
 	}
 	
 	/**
@@ -55,20 +63,24 @@ public class XBehaviorFactory implements PropertyConstants {
 	 * @return
 	 * @throws Exception
 	 */
-	public static XBehaviorFactory load(String path) throws Exception {
+	public static XBehaviorFactory load(String path) {
         if(isLoaded(path))
             return factories.get(path);
         
 		InputStream in;
 		File f = new File(path);
-		if(f.exists())
-			in = new FileInputStream(f);
-		else {
-			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-			if (classLoader == null) {
-				classLoader = XBehaviorFactory.class.getClassLoader();
+		try {
+			if(f.exists())
+				in = new FileInputStream(f);
+			else {
+				ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+				if (classLoader == null) {
+					classLoader = XBehaviorFactory.class.getClassLoader();
+				}
+				in = classLoader.getResource(path).openStream();
 			}
-			in = classLoader.getResource(path).openStream();
+		} catch (Exception e) {
+			throw new IllegalArgumentException(e);
 		}
         
         return getFactory(path, load(in));
@@ -79,12 +91,14 @@ public class XBehaviorFactory implements PropertyConstants {
         return oldFactory == null ? factory : oldFactory;
 	}
 	
-	public static XBehaviorFactory load(InputStream in) throws Exception {
+	public static XBehaviorFactory load(InputStream in) {
 		XBehaviorFactory factory = null;
 		try{
 			Document doc= DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(in);
 			factory = getFromDocument(doc);
-		} finally {
+		} catch(Throwable e) {
+			throw new IllegalStateException(e);
+		}finally {
 			try{
 				if(in != null)
 					in.close();
@@ -143,7 +157,7 @@ public class XBehaviorFactory implements PropertyConstants {
             	node = CompositeDef.parallelDef(get(PROP_MODE), get(PROP_COUNT));
 				break;
             case INVERTER:
-				node = BehaviorDef.actionDef(get(PROP_IMPLEMENTATION));
+				node = DecoratorDef.inverterDef();
 				break;
             case REPEAT:
             	mode = ProcessMode.valueOf(get(PROP_MODE));
@@ -195,7 +209,7 @@ public class XBehaviorFactory implements PropertyConstants {
     					TimeUnit.valueOf(get(PROP_TIME_UNIT)));
 				break;
             case SUBTREE:
-            	node = BehaviorDef.subtreeDef(treeDefs, get(PROP_NAME));
+            	node = BehaviorDef.subtreeDef(treeDefs, get(PROP_SUBTREE));
 				break;
 			default:
 				break;

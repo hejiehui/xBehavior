@@ -20,10 +20,8 @@ public enum BehaviorType implements PropertyConstants {
 	SLEEP,
 	SUBTREE;
 
-    private String nodeName;
-
     public String getNodeName() {
-        return nodeName;
+        return name().toLowerCase();
     }
 
     public static BehaviorType findByNodeName(String nodeName) {

@@ -23,6 +23,8 @@ public class SubtreeNode extends BehaviorNode {
 
         List<String> names = new ArrayList<>();
         for(BehaviorNode node: diagram.getRoots()){
+            if(node.getName() == null || node.getName().trim().isEmpty())
+                continue;
             names.add(node.getName());
         }
         return names.toArray(new String[names.size()]);

@@ -27,6 +27,7 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
     private static final String BEHAVIOR_TREE = "behavior_tree";
     private static final String NAME = "name";
     private static final String DESCRIPTION = "description";
+    private static final String EVALUATOR = "evaluator";
 
     private static final String NODES = "nodes";
 
@@ -77,6 +78,7 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
         Node root = doc.getElementsByTagName(BEHAVIOR_TREE).item(0);
 
         diagram.setDescription(getChildNodeText(root, DESCRIPTION));
+        diagram.setEvaluator(getAttribute(root, EVALUATOR));
 
         List<BehaviorNode> nodes = createNodes(doc, diagram);
         linkNode(doc, nodes);
@@ -140,6 +142,7 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
             doc.appendChild(root);
 
             root.appendChild(createNode(doc, DESCRIPTION, diagram.getDescription()));
+            root.setAttribute(EVALUATOR, diagram.getEvaluator());
 
             Element nodes = createNode(doc, root, NODES);
             writeNodes(doc, nodes, diagram.getChildren());

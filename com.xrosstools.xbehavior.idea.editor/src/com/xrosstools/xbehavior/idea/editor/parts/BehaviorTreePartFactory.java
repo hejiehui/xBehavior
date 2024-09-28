@@ -6,19 +6,25 @@ import com.xrosstools.idea.gef.parts.EditPartFactory;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorNode;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorNodeConnection;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;
+import com.xrosstools.xbehavior.idea.editor.model.SubtreeNode;
 
 public class BehaviorTreePartFactory implements EditPartFactory {
+    private BehaviorTreeDiagram diagram;
     public EditPart createEditPart(EditPart parent, Object model) {
         AbstractGraphicalEditPart part = null;
 
         if(model == null)
             part = null;
 
-        if(model instanceof BehaviorTreeDiagram)
+        if(model instanceof BehaviorTreeDiagram) {
             part = new BehaviorTreeDiagramPart();
-        else if(model instanceof BehaviorNode)
+            diagram = (BehaviorTreeDiagram) model;
+        } else if(model instanceof BehaviorNode) {
             part = new BehaviorNodePart();
-        else if(model instanceof BehaviorNodeConnection)
+            if(model instanceof SubtreeNode) {
+                ((SubtreeNode)model).setDiagram(diagram);
+            }
+        } else if(model instanceof BehaviorNodeConnection)
             part = new BehaviorNodeConnectionPart();
 
         part.setModel(model);

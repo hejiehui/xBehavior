@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BehaviorTreeDiagram extends Diagram<BehaviorNode> implements PropertyConstants {
     private PropertyEntry<String> description = stringProperty(PROP_DESCRIPTION);
-    private PropertyEntry<String> evaluator = stringProperty(PROP_EVALUATOR, "default");
+    private PropertyEntry<String> evaluator = stringProperty(PROP_EVALUATOR);
 
 
     private boolean isHorizantal;

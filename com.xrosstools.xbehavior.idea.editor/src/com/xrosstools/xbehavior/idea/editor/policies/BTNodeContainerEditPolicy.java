@@ -1,7 +1,9 @@
 package com.xrosstools.xbehavior.idea.editor.policies;
 
+import com.xrosstools.idea.gef.commands.CreateNodeCommand;
 import com.xrosstools.idea.gef.commands.MoveNodeCommand;
 import com.xrosstools.idea.gef.policies.NodeContainerEditPolicy;
+import com.xrosstools.xbehavior.idea.editor.commands.BTCreateNodeCommand;
 import com.xrosstools.xbehavior.idea.editor.commands.BTMoveNodeCommand;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;
 
@@ -14,5 +16,9 @@ public class BTNodeContainerEditPolicy extends NodeContainerEditPolicy {
 
     public MoveNodeCommand createMoveNodeCommand() {
         return new BTMoveNodeCommand(diagram);
+    }
+
+    public CreateNodeCommand createCreateNodeCommand() {
+        return new BTCreateNodeCommand(diagram);
     }
 }

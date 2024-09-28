@@ -8,7 +8,7 @@ public class Sleep implements Action {
 	private Property<Long> delay;
 	private TimeUnit timeUnit;
 
-	private Timeout timeout = Timeout.NEVER;
+	private Timeout timeout;
 
 	public Sleep(long delay, TimeUnit timeUnit) {
 		this(ValueProperty.of(delay), timeUnit);
@@ -32,10 +32,7 @@ public class Sleep implements Action {
 	}
 	
 	private boolean isStarted(Blackboard context) {
-		if(timeout.isStarted())
-			return true;
-			
-		if(delay != null && timeout.getDelay() != delay.get(context))
+		if(timeout == null)
 			timeout = new Timeout(delay.get(context), timeUnit);
 
 		return timeout.isStarted();

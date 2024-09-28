@@ -8,45 +8,29 @@ public class Repeat extends Decorator {
 	private boolean repeatUntilFailure = true;
 
 	private Property<Integer> maxAttempt = ValueProperty.of(-1);
-	private Property<Long> delay;
-	private TimeUnit timeUnit;
+	private Property<Long> delay = ValueProperty.of(-1L);
+	private TimeUnit timeUnit = TimeUnit.SECONDS;
 
-	private Timeout timeout = Timeout.NEVER;
+	private boolean started = false;
+	private Timeout timeout;
+	private int max = -1;
 	private int count = 0;
 	
-	public Repeat() {}
-
-	public Repeat(Property<Long> delay, TimeUnit timeUnit) {
+	public Repeat(Property<Long> delay, TimeUnit timeUnit, boolean repeatUntilFailure) {
 		this.delay = delay;
 		this.timeUnit = timeUnit;
-	}
-	
-	public Repeat(Property<Integer> maxAttempt) {
-		this.maxAttempt = maxAttempt;
-	}
-	
-	public void setTimeout(Timeout timeout) {
-		this.timeout = timeout == null ?  Timeout.NEVER : timeout;
-	}
-			
-	public void setMaxAttempt(int maxAttempt) {
-		this.maxAttempt = ValueProperty.of(maxAttempt);
-	}
-	
-	public boolean isRepeatUntilFailure() {
-		return repeatUntilFailure;
-	}
-
-	public void setRepeatUntilFailure(boolean repeatUntilFailure) {
 		this.repeatUntilFailure = repeatUntilFailure;
 	}
-
+	
+	public Repeat(Property<Integer> maxAttempt, boolean repeatUntilFailure) {
+		this.maxAttempt = maxAttempt;
+		this.repeatUntilFailure = repeatUntilFailure;
+	}
+	
 	public StatusEnum tick(Blackboard context) {
 		start(context);		
 		Behavior decorated = getDecorated();
 
-		//If maxAttempt < 0, then repeat until failure
-		int max = maxAttempt.get(context);
 		while(max < 0 || count < max) {
 			if(timeout.isTimeout())
 				break;
@@ -70,17 +54,18 @@ public class Repeat extends Decorator {
 	}
 
 	private void start(Blackboard context) {
-		if(timeout.isStarted())
+		if(started)
 			return;
 
-		if(delay != null && timeout.getDelay() != delay.get(context))
-			timeout = new Timeout(delay.get(context), timeUnit);
-		
+		max = maxAttempt.get(context);
+		timeout = new Timeout(delay.get(context), timeUnit);
 		timeout.start();
+		started = true;
 	}
 	
 	public void resetParent() {
+		started = false;
 		count = 0;
-		timeout.reset();
+		timeout = null;
 	}
 }

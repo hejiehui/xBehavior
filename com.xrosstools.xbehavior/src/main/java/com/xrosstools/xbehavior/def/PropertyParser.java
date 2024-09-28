@@ -1,13 +1,11 @@
 package com.xrosstools.xbehavior.def;
 
 import com.xrosstools.xbehavior.Property;
-import com.xrosstools.xbehavior.RawValueProperty;
-import com.xrosstools.xbehavior.ReferenceProperty;
 
 public class PropertyParser {
 	public Property<Integer> parseInteger(String expression) {
 		try {
-			return new RawValueProperty<Integer>(Integer.parseInt(expression));
+			return ValueProperty.of(Integer.parseInt(expression));
 		} catch (NumberFormatException e) {
 			return new ReferenceProperty<Integer>(expression);
 		}
@@ -15,7 +13,7 @@ public class PropertyParser {
 
 	public Property<Long> parseLong(String expression) {
 		try {
-			return new RawValueProperty<Long>(Long.parseLong(expression));
+			return ValueProperty.of(Long.parseLong(expression));
 		} catch (NumberFormatException e) {
 			return new ReferenceProperty<Long>(expression);
 		}
@@ -23,15 +21,15 @@ public class PropertyParser {
 
 	public Property<Boolean> parseBoolean(String expression) {
 		if("true".equalsIgnoreCase(expression))
-			return new RawValueProperty<Boolean>(true);
+			return ValueProperty.of(true);
 		if("false".equalsIgnoreCase(expression))
-			return new RawValueProperty<Boolean>(false);
+			return ValueProperty.of(false);
 		return new ReferenceProperty<Boolean>(expression);
 	}
 
 	public Property<Float> parseFloat(String expression) {
 		try {
-			return new RawValueProperty<Float>(Float.parseFloat(expression));
+			return ValueProperty.of(Float.parseFloat(expression));
 		} catch (NumberFormatException e) {
 			return new ReferenceProperty<Float>(expression);
 		}
@@ -39,7 +37,7 @@ public class PropertyParser {
 
 	public Property<Double> parseDouble(String expression) {
 		try {
-			return new RawValueProperty<Double>(Double.parseDouble(expression));
+			return ValueProperty.of(Double.parseDouble(expression));
 		} catch (NumberFormatException e) {
 			return new ReferenceProperty<Double>(expression);
 		}

@@ -63,9 +63,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 		return new DecoratorDef() {
 			@Override
 			public Decorator createParent() {
-				Repeat rep = new Repeat(parser.parseLong(delayExp), timeUnit);
-				rep.setRepeatUntilFailure(repeatUntilFailure);
-				return rep;
+				return new Repeat(parser.parseLong(delayExp), timeUnit, repeatUntilFailure);
 			}
 		};
 	}
@@ -74,9 +72,7 @@ public abstract class DecoratorDef extends BehaviorDef {
 		return new DecoratorDef() {
 			@Override
 			public Decorator createParent() {
-				Repeat rep = new Repeat(parser.parseInteger(maxAttemptExp));
-				rep.setRepeatUntilFailure(repeatUntilFailure);
-				return rep;
+				return new Repeat(parser.parseInteger(maxAttemptExp), repeatUntilFailure);
 			}
 		};
 	}

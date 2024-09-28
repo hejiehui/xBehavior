@@ -1,8 +1,5 @@
 package !PACKAGE!;
 
-import com.xrosstools.xbehavior.Behavior;
-import com.xrosstools.xbehavior.XBehaviorFactory;
-
 /**
     IMPORTANT NOTE!
     This is generated code based on Xross Behavior Tree model file "!MODEL_PATH!".
@@ -17,7 +14,7 @@ import com.xrosstools.xbehavior.XBehaviorFactory;
 public class !TEST_CLASS! {
     !TREE_DEFINITIONS!
     private static volatile XBehaviorFactory factory;
-    private static StateMachineFactory load() throws Exception {
+    private static XBehaviorFactory load()  {
         if(factory == null) {
             synchronized(!TEST_CLASS!.class) {
                 if(factory == null)

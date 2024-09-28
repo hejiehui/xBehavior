@@ -10,16 +10,18 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.def.ValueProperty;
+
 public class RetryTest {
 	private Retry test;
 	private int maxAttempt = 3;
-	private Timeout timeout = new Timeout(1, TimeUnit.SECONDS);
+	private Property<Long> delay = ValueProperty.of(1L);
+	private TimeUnit timeUnit = TimeUnit.SECONDS;
 	private StatusAction internal;
 	private Blackboard bb;
 
-	@Before
-	public void setUp() throws Exception {
-		test = new Retry();
+	public void setUp(Retry test) {
+		this.test = test;
 		internal = new StatusAction();
 		test.setDecorated(internal);
 		bb = new Blackboard();
@@ -27,7 +29,7 @@ public class RetryTest {
 
 	@Test
 	public void testMaxAttemptSuccess() {
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Retry(ValueProperty.of(maxAttempt)));
 		
 		internal.setSequence(FAILURE, FAILURE, SUCCESS);
 			
@@ -37,7 +39,7 @@ public class RetryTest {
 
 	@Test
 	public void testMaxAttemptFailure() {
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Retry(ValueProperty.of(maxAttempt)));
 
 		internal.setSequence(FAILURE, FAILURE, FAILURE);
 			
@@ -47,7 +49,7 @@ public class RetryTest {
 
 	@Test
 	public void testMaxAttempt_Running_Success() {
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Retry(ValueProperty.of(maxAttempt)));
 
 		internal.setSequence(RUNNING, FAILURE, FAILURE, SUCCESS);
 
@@ -65,7 +67,7 @@ public class RetryTest {
 
 	@Test
 	public void testRepeatUntilFailure_Running_Failure() {
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Retry(ValueProperty.of(maxAttempt)));
 
 		internal.setSequence(FAILURE, RUNNING, FAILURE, FAILURE);
 
@@ -85,8 +87,7 @@ public class RetryTest {
 
 	@Test
 	public void testTimeout_Success() {
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Retry(delay, timeUnit));
 		
 		internal.setSequence(FAILURE, FAILURE, FAILURE, SUCCESS, FAILURE);
 		//0, 300, 600, 900
@@ -121,8 +122,7 @@ public class RetryTest {
 
 	@Test
 	public void testTimeout_Running_Success() {
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Retry(delay, timeUnit));
 
 		//Running case 1
 		internal.resetTickCount();
@@ -162,8 +162,7 @@ public class RetryTest {
 	@Test
 	public void testTimeout_Failure() {
 		//No timeout
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Retry(delay, timeUnit));
 		
 		internal.setSequence(FAILURE, FAILURE, FAILURE, FAILURE, FAILURE);
 		//0, 300, 600, 900
@@ -199,8 +198,7 @@ public class RetryTest {
 	@Test
 	public void testTimeout_Running_Failure() {
 		//No timeout
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Retry(delay, timeUnit));
 		
 		internal.setSequence(FAILURE, RUNNING, FAILURE, FAILURE, FAILURE);
 		//0, 300, 600, 900

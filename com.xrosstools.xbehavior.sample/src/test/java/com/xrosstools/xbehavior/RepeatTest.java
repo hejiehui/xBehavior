@@ -10,16 +10,18 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.def.ValueProperty;
+
 public class RepeatTest {
 	private Repeat test;
 	private int maxAttempt = 3;
-	private Timeout timeout = new Timeout(1, TimeUnit.SECONDS);
+	private Property<Long> delay = ValueProperty.of(1L);
+	private TimeUnit timeUnit = TimeUnit.SECONDS;
 	private StatusAction internal;
 	private Blackboard bb;
 
-	@Before
-	public void setUp() throws Exception {
-		test = new Repeat();
+	public void setUp(Repeat test) {
+		this.test = test;
 		internal = new StatusAction();
 		test.setDecorated(internal);
 		bb = new Blackboard();
@@ -29,8 +31,7 @@ public class RepeatTest {
 	
 	@Test
 	public void testRepeatUntilFailure_Success() {
-		test.setRepeatUntilFailure(true);
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Repeat(ValueProperty.of(maxAttempt), true));
 		
 		internal.setSequence(SUCCESS, SUCCESS, SUCCESS);
 			
@@ -40,8 +41,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Failure() {
-		test.setRepeatUntilFailure(true);
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Repeat(ValueProperty.of(maxAttempt), true));
 
 		internal.setSequence(SUCCESS, FAILURE, SUCCESS);
 			
@@ -51,9 +51,8 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Running_Success() {
-		test.setRepeatUntilFailure(true);
-		test.setMaxAttempt(maxAttempt);
-
+		setUp(new Repeat(ValueProperty.of(maxAttempt), true));
+		
 		internal.setSequence(SUCCESS, RUNNING, SUCCESS, SUCCESS);
 
 		assertEquals(RUNNING, test.tick(bb));
@@ -70,8 +69,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Running_Failure() {
-		test.setRepeatUntilFailure(true);
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Repeat(ValueProperty.of(maxAttempt), true));
 
 		internal.setSequence(SUCCESS, RUNNING, SUCCESS, FAILURE);
 
@@ -89,8 +87,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeat_Success() {
-		test.setRepeatUntilFailure(false);
-		test.setMaxAttempt(maxAttempt);
+		setUp(new Repeat(ValueProperty.of(maxAttempt), false));
 
 		internal.setSequence(SUCCESS, SUCCESS, SUCCESS);
 			
@@ -115,9 +112,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Success_Timeout() {
-		test.setRepeatUntilFailure(true);
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Repeat(delay, timeUnit, true));
 		
 		internal.setSequence(SUCCESS, SUCCESS, SUCCESS, SUCCESS, FAILURE);
 		//0, 300, 600, 900
@@ -151,9 +146,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Running_Success_Timeout() {
-		test.setRepeatUntilFailure(true);
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Repeat(delay, timeUnit, true));
 
 		//Running case 1
 		internal.resetTickCount();
@@ -193,9 +186,7 @@ public class RepeatTest {
 
 	@Test
 	public void testRepeatUntilFailure_Failure_Timeout() {
-		test.setRepeatUntilFailure(true);
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Repeat(delay, timeUnit, true));
 		
 		internal.setSequence(SUCCESS, SUCCESS, SUCCESS, FAILURE);
 		//0, 300, 600, 900
@@ -221,9 +212,7 @@ public class RepeatTest {
 	
 	@Test
 	public void testRepeatUntilFailure_Running_Failure_Timeout() {
-		test.setRepeatUntilFailure(true);
-		test.setTimeout(timeout);
-		test.setMaxAttempt(-1);
+		setUp(new Repeat(delay, timeUnit, true));
 		
 		//Running case 1
 		internal.resetTickCount();

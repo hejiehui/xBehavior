@@ -45,7 +45,6 @@ public abstract class BehaviorDef implements PropertyConstants {
 		};
 	}
 
-	
 	public static BehaviorDef asynchActionDef(final String implementation, final String delayExp, final TimeUnit timeUnit) {
 		return new BehaviorDef() {
 			@Override

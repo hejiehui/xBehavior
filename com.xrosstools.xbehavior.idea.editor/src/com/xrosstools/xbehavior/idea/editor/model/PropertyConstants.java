@@ -17,7 +17,7 @@ public interface PropertyConstants {
     String PROP_SUBTREE = "Subtree";
     String PROP_ASYNCHRONOUS = "Asynchronous";
     String PROP_STATUS = "Status";
-    String PROP_EVALUATOR = "evaluator";
+    String PROP_EVALUATOR = "Evaluator";
 
     int DEFAULT_HEIGHT = 50;
     ProcessMode DEFAULT_PROCESS_MODE = ProcessMode.MAX_ATTEMPT;

@@ -15,7 +15,7 @@ public class ActionNode extends BehaviorNode {
         setOutputLimit(0);
         register(asynchronous);
         register(implementation);
-        register(timeout);
-        register(timeUnit);
+        register(timeout, ()->asynchronous.get());
+        register(timeUnit, ()->asynchronous.get());
     }
 }

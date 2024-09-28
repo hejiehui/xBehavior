@@ -12,7 +12,7 @@ public class Parallel extends Composite {
 
     private Mode mode;
     private Property<Integer> minSuccess;
-	private Set<Integer> completed = new HashSet<>();
+	private Set<Integer> completed;
 	private int successCounter;
 	private int failureCounter;
 	
@@ -35,8 +35,9 @@ public class Parallel extends Composite {
 	 * All children need to be executed
 	 */
 	public StatusEnum tick(Blackboard context) {
-		if(completed.isEmpty()) {
-			int min = minSuccess.get(context);
+		if(completed == null) {
+			completed = new HashSet<>();
+			int min = mode == Mode.ANY ? 1 : mode == Mode.ALL ? size() : minSuccess.get(context);
 			successCounter = min;
 			failureCounter = size() - min;
 		}
@@ -72,5 +73,6 @@ public class Parallel extends Composite {
 	
 	public void resetParent() {
 		completed.clear();
+		completed = null;
 	}
 }

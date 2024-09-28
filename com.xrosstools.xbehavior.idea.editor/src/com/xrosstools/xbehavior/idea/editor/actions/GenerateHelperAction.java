@@ -17,7 +17,7 @@ public class GenerateHelperAction extends Action implements BehaviorTreeMessage 
     private static final String CREATE_MACHINE =
             "    public static class %s {\n" +//Behavior tree name, constants
             "%s" +
-            "        public static Behavior create() throws Exception {\n" +   //Behavior tree
+            "        public static Behavior create() {\n" +   //Behavior tree
             "            return load().create(\"%s\");\n" +
             "        }\n" +
             "    }\n\n";
@@ -56,6 +56,9 @@ public class GenerateHelperAction extends Action implements BehaviorTreeMessage 
             StringBuffer buf = new StringBuffer();
 
             appendDesc(buf, MACHINE_COMMENTS, tree.getDescription());
+            if(tree.getName() == null)
+                continue;
+
             String createMachine = String.format(CREATE_MACHINE, toClassName(tree.getName()), buf.toString(), tree.getName());
             constants.append(createMachine);
         }

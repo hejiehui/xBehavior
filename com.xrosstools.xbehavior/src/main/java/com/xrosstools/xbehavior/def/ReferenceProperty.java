@@ -1,4 +1,7 @@
-package com.xrosstools.xbehavior;
+package com.xrosstools.xbehavior.def;
+
+import com.xrosstools.xbehavior.Blackboard;
+import com.xrosstools.xbehavior.Property;
 
 public class ReferenceProperty<T> implements Property<T> {
 	private String key;

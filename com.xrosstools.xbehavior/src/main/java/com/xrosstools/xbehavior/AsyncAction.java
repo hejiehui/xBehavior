@@ -13,10 +13,11 @@ public class AsyncAction implements Action {
 
 	private Action actualAction;
 	
-	private Property<Long> delay;
-	private TimeUnit timeUnit;
+	private Property<Long> delay = ValueProperty.of(-1L);
+	private TimeUnit timeUnit = TimeUnit.SECONDS;
 
-	private Timeout timeout = Timeout.NEVER;
+	private boolean started = false;
+	private Timeout timeout;
 	private Future<StatusEnum> future;
 
 	public AsyncAction(Long delay, TimeUnit timeUnit, Action actualAction) {
@@ -63,7 +64,7 @@ public class AsyncAction implements Action {
 
 	@Override
 	public void reset() {
-		timeout.reset();
+		timeout = null;
 		resetFuture(future);
 		future = null;
 		actualAction.reset();
