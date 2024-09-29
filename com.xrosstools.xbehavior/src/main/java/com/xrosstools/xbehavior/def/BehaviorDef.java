@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import com.xrosstools.xbehavior.Action;
 import com.xrosstools.xbehavior.AsyncAction;
 import com.xrosstools.xbehavior.Behavior;
+import com.xrosstools.xbehavior.CallbackCondition;
+import com.xrosstools.xbehavior.Condition;
 import com.xrosstools.xbehavior.Evaluator;
 import com.xrosstools.xbehavior.ExpressionCondition;
 import com.xrosstools.xbehavior.FixedStatus;
@@ -77,7 +79,7 @@ public abstract class BehaviorDef implements PropertyConstants {
 		return new BehaviorDef() {
 			@Override
 			public Behavior create() {
-				return InstatnceFactory.getInstance(implementation);
+				return new CallbackCondition((Condition)InstatnceFactory.getInstance(implementation));
 			}
 		};
 	}	

@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cafe8401-48f1-4328-807f-83a74fdd6754" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/commands/BTCreateNodeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/com.xrosstools.xbehavior.idea.editor/templates/HelperTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/com.xrosstools.xbehavior.idea.editor/templates/HelperTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/com.xrosstools.xbehavior.idea.editor/templates/template.xbehavior" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/com.xrosstools.xbehavior.idea.editor/templates/template.xbehavior" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/HelperTemplate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/HelperTemplate.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/template.xbehavior" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/template.xbehavior" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SubtreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/SubtreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorTreePartFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorTreePartFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BTNodeContainerEditPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BTNodeContainerEditPolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/ParallelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/ParallelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/RepeatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/RepeatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/RetryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior.sample/src/test/java/com/xrosstools/xbehavior/RetryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/AsyncAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/AsyncAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/BehaviorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/BehaviorType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Parallel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Parallel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/RawValueProperty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/ReferenceProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/ReferenceProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Repeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Repeat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Retry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Retry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Sleep.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Sleep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Timeout.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/Timeout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/XBehaviorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/XBehaviorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/BehaviorDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/BehaviorDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/DecoratorDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/DecoratorDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/PropertyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/PropertyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/PropertyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../com.xrosstools.xbehavior/src/main/java/com/xrosstools/xbehavior/def/PropertyParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,18 +14,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/templates/HelperTemplate.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
@@ -65,10 +23,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="323">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -85,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="82" column="61" lean-forward="true" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
+            <state relative-caret-position="173">
+              <caret line="62" column="88" lean-forward="true" selection-start-line="62" selection-start-column="88" selection-end-line="62" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -94,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="40" />
+            <state relative-caret-position="285">
+              <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -386,7 +356,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1727538463057" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1727623758884" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../xcommon/com.xrosstools.idea.gef" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -457,7 +427,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1711" y="4" width="1734" height="1395" extended-state="0" />
+    <frame x="1711" y="4" width="1734" height="1395" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6666667" visible="true" weight="0.2204301" />
@@ -514,6 +484,12 @@
           <line>53</line>
           <properties />
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -847,16 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/templates/template.xbehavior">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -889,16 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../xcommon/com.xrosstools.idea.gef/src/com/xrosstools/idea/gef/util/PropertySourceXmlRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -912,17 +868,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeatNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="40" />
+        <state relative-caret-position="285">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="82" column="61" lean-forward="true" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
+        <state relative-caret-position="173">
+          <caret line="62" column="88" lean-forward="true" selection-start-line="62" selection-start-column="88" selection-end-line="62" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -933,17 +913,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/RepeatNode.java">
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="610">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

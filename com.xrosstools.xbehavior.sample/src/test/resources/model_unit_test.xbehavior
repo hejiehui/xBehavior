@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior_tree evaluator="com.xrosstools.xbehavior.XpressionEvaluator">
+ <description/>
+ <nodes>
+  <fixed_status name="failure" status="FAILURE"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <fixed_status name="failure" status="FAILURE"/>
+  <fixed_status name="failure" status="SUCCESS"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <subtree name="Failure" subtree="Failure"/>
+  <subtree name="failure" subtree="Failure"/>
+  <subtree name="success" subtree="Success"/>
+  <subtree name="selector success" subtree="selector success"/>
+  <subtree name="parallel success" subtree="parallel success"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <fixed_status name="success" status="SUCCESS"/>
+  <fixed_status name="running" status="RUNNING"/>
+  <fixed_status name="failure" status="FAILURE"/>
+  <fixed_status name="failure" status="FAILURE"/>
+  <fixed_status name="failure" status="FAILURE"/>
+  <fixed_status name="running" status="RUNNING"/>
+  <subtree name="sequence failure" subtree="sequence failure"/>
+  <subtree name="selector failure" subtree="selector failure"/>
+  <subtree name="Failure" subtree="Failure"/>
+  <subtree name="sequence running" subtree="sequence running"/>
+  <subtree name="sequence success" subtree="sequence success"/>
+  <subtree name="selector success" subtree="selector success"/>
+  <subtree name="parallel success" subtree="parallel success"/>
+  <subtree name="parallel running" subtree="parallel running"/>
+  <sleep count="1" name="1 sec" time_unit="SECONDS"/>
+  <fixed_status name="running" status="RUNNING"/>
+  <inverter/>
+  <sleep count="1" time_unit="SECONDS"/>
+  <fixed_status status="RUNNING"/>
+  <action asynchronous="false" implementation="com.xrosstools.xbehavior.sample.Action5FailureSuccess" name="action5"/>
+  <action asynchronous="false" implementation="com.xrosstools.xbehavior.sample.Action5FailureSuccess" name="action5">
+   <description/>
+  </action>
+  <subtree name="selector running" subtree="selector running"/>
+  <action asynchronous="false" implementation="com.xrosstools.xbehavior.sample.Action5SuccessFailure"/>
+  <action asynchronous="false" implementation="com.xrosstools.xbehavior.sample.Action5SuccessFailure"/>
+  <fixed_status status="FAILURE"/>
+  <subtree name="wait success" subtree="wait success"/>
+  <sleep count="2" name="2 sec" time_unit="SECONDS"/>
+  <subtree name="inverter failure" subtree="inverter failure"/>
+  <fixed_status name="running" status="RUNNING"/>
+  <subtree name="sequency running" subtree="sequence running"/>
+  <subtree name="selector running" subtree="selector running"/>
+  <sequence name="sequence failure" reactive="false"/>
+  <sequence name="sequence success" reactive="false"/>
+  <sequence name="sequence running" reactive="false"/>
+  <selector name="selector success" reactive="false"/>
+  <selector name="selector failure" reactive="false"/>
+  <selector name="selector running" reactive="false"/>
+  <parallel count="2" mode="SOME" name="parallel success"/>
+  <parallel mode="ANY" name="parallel failure"/>
+  <parallel mode="ALL" name="parallel running"/>
+  <inverter name="inverter success"/>
+  <inverter name="inverter failure"/>
+  <inverter name="inverter running"/>
+  <repeat count="5" mode="MAX_ATTEMPT" name="repeat success" repeat_until_failure="true"/>
+  <repeat count="10" mode="MAX_ATTEMPT" name="repeat failure" repeat_until_failure="true"/>
+  <repeat count="10" mode="MAX_ATTEMPT" name="repeat running" repeat_until_failure="true"/>
+  <repeat count="1010" mode="TIMEOUT" name="repeat success timeout" repeat_until_failure="true" time_unit="MILLISECONDS"/>
+  <repeat count="2" mode="TIMEOUT" name="repeat failure timeout" repeat_until_failure="true" time_unit="SECONDS"/>
+  <repeat count="1" mode="TIMEOUT" name="repeat running timeout" repeat_until_failure="true" time_unit="SECONDS"/>
+  <retry count="5" mode="MAX_ATTEMPT" name="retry failure"/>
+  <retry count="6" mode="MAX_ATTEMPT" name="retry success"/>
+  <retry count="10" mode="MAX_ATTEMPT" name="retry running"/>
+  <retry count="1030" mode="TIMEOUT" name="retry success timeout" time_unit="MILLISECONDS"/>
+  <retry count="1" mode="TIMEOUT" name="retry failure timeout" time_unit="SECONDS"/>
+  <retry count="1" mode="TIMEOUT" name="retry running timeout" time_unit="SECONDS"/>
+  <wait name="wait success" time_unit="SECONDS" timeout="1"/>
+  <wait name="wait failure" time_unit="SECONDS" timeout="1"/>
+  <wait name="wait running" time_unit="SECONDS" timeout="1"/>
+  <force_success name="force sucess"/>
+  <force_failure name="force failure"/>
+  <force_success name="force success running"/>
+  <force_failure name="force failure running"/>
+  <sleep count="1" name="sleep" time_unit="SECONDS"/>
+  <fixed_status name="Failure" status="FAILURE"/>
+  <fixed_status name="Success" status="SUCCESS"/>
+  <subtree name="subtree sucess" subtree="selector success"/>
+  <condition implementation="com.xrosstools.xbehavior.sample.ConditionByA" mode="CALLBACK" name="callback true"/>
+  <condition implementation="com.xrosstools.xbehavior.sample.ConditionByA" mode="CALLBACK" name="callback false"/>
+  <condition expression="A.isEmpty()" mode="EXPRESSION" name="expression true"/>
+  <condition expression="A.isEmpty()" mode="EXPRESSION" name="expression false"/>
+ </nodes>
+ <connections>
+  <connection source_index="29" target_index="30"/>
+  <connection source_index="44" target_index="2"/>
+  <connection source_index="44" target_index="3"/>
+  <connection source_index="45" target_index="12"/>
+  <connection source_index="45" target_index="11"/>
+  <connection source_index="46" target_index="13"/>
+  <connection source_index="46" target_index="14"/>
+  <connection source_index="47" target_index="4"/>
+  <connection source_index="47" target_index="5"/>
+  <connection source_index="48" target_index="15"/>
+  <connection source_index="48" target_index="16"/>
+  <connection source_index="49" target_index="17"/>
+  <connection source_index="49" target_index="18"/>
+  <connection source_index="50" target_index="7"/>
+  <connection source_index="50" target_index="8"/>
+  <connection source_index="50" target_index="9"/>
+  <connection source_index="51" target_index="19"/>
+  <connection source_index="51" target_index="21"/>
+  <connection source_index="51" target_index="20"/>
+  <connection source_index="52" target_index="22"/>
+  <connection source_index="52" target_index="24"/>
+  <connection source_index="52" target_index="23"/>
+  <connection source_index="53" target_index="6"/>
+  <connection source_index="54" target_index="25"/>
+  <connection source_index="55" target_index="26"/>
+  <connection source_index="56" target_index="35"/>
+  <connection source_index="57" target_index="36"/>
+  <connection source_index="58" target_index="28"/>
+  <connection source_index="59" target_index="27"/>
+  <connection source_index="60" target_index="29"/>
+  <connection source_index="61" target_index="31"/>
+  <connection source_index="62" target_index="32"/>
+  <connection source_index="63" target_index="33"/>
+  <connection source_index="64" target_index="34"/>
+  <connection source_index="65" target_index="38"/>
+  <connection source_index="66" target_index="40"/>
+  <connection source_index="67" target_index="39"/>
+  <connection source_index="68" target_index="10"/>
+  <connection source_index="69" target_index="37"/>
+  <connection source_index="70" target_index="41"/>
+  <connection source_index="71" target_index="0"/>
+  <connection source_index="72" target_index="1"/>
+  <connection source_index="73" target_index="42"/>
+  <connection source_index="74" target_index="43"/>
+ </connections>
+</behavior_tree>

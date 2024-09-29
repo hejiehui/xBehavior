@@ -1,6 +1,6 @@
 package com.xrosstools.xbehavior;
 
-public class ExpressionCondition extends Condition {
+public class ExpressionCondition implements Condition, Behavior {
 	private Evaluator evaluator;	
 	private Object expression;
 
@@ -12,6 +12,11 @@ public class ExpressionCondition extends Condition {
 	@Override
 	public boolean check(Blackboard context) {
 		return (Boolean)evaluator.evaluate(expression , context);
+	}
+
+	@Override
+	public final StatusEnum tick(Blackboard context) {
+		return check(context) ? StatusEnum.SUCCESS : StatusEnum .FAILURE;
 	}
 
 	@Override

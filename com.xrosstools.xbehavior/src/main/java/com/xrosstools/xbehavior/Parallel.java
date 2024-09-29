@@ -72,6 +72,9 @@ public class Parallel extends Composite {
 	}
 	
 	public void resetParent() {
+		if(completed == null)
+			return;
+
 		completed.clear();
 		completed = null;
 	}

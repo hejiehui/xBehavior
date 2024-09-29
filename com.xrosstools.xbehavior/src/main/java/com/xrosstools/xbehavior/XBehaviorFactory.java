@@ -2,7 +2,6 @@ package com.xrosstools.xbehavior;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -190,7 +189,7 @@ public class XBehaviorFactory implements PropertyConstants {
             	if(Condition.Mode.valueOf(get(PROP_MODE)) == Condition.Mode.CALLBACK)
             		node = BehaviorDef.callbackConditionDef(get(PROP_IMPLEMENTATION));
             	else
-            		node = BehaviorDef.exprConditionDef(evaluator, get(PROP_IMPLEMENTATION));
+            		node = BehaviorDef.exprConditionDef(evaluator, get(PROP_EXPRESSION));
 				break;
             case ACTION:
             	boolean async = Boolean.parseBoolean(get(PROP_ASYNCHRONOUS));

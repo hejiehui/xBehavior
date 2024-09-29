@@ -16,7 +16,6 @@ public class AsyncAction implements Action {
 	private Property<Long> delay = ValueProperty.of(-1L);
 	private TimeUnit timeUnit = TimeUnit.SECONDS;
 
-	private boolean started = false;
 	private Timeout timeout;
 	private Future<StatusEnum> future;
 

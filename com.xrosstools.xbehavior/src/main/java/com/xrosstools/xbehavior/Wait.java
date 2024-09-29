@@ -40,11 +40,13 @@ public class Wait extends Decorator {
 		}
 
 		StatusEnum status = getResult(future);
-		if(status == StatusEnum.RUNNING)
-			return StatusEnum.RUNNING;
+		
+		if(future.isDone()) {
+			reset();
+			return status;
+		}
 
-		reset();
-		return status;
+		return StatusEnum.RUNNING;
 	}
 	
 	public void resetParent() {
