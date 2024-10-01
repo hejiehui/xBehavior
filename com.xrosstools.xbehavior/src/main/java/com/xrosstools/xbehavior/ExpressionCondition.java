@@ -4,9 +4,9 @@ public class ExpressionCondition implements Condition, Behavior {
 	private Evaluator evaluator;	
 	private Object expression;
 
-	public ExpressionCondition(Evaluator evaluator, String expressionStr) {
+	public ExpressionCondition(Evaluator evaluator, String leftExpressionStr, String operatorStr, String rightExpressionStr) {
 		this.evaluator = evaluator;
-		this.expression = evaluator.compile(expressionStr);
+		this.expression = evaluator.compile(leftExpressionStr, operatorStr, rightExpressionStr);
 	}
 	
 	@Override

@@ -16,8 +16,8 @@ public class AsyncAction implements Action {
 	private Property<Long> delay = ValueProperty.of(-1L);
 	private TimeUnit timeUnit = TimeUnit.SECONDS;
 
-	private Timeout timeout;
-	private Future<StatusEnum> future;
+	private volatile Timeout timeout;
+	private volatile Future<StatusEnum> future;
 
 	public AsyncAction(Long delay, TimeUnit timeUnit, Action actualAction) {
 		this(ValueProperty.of(delay), timeUnit, actualAction);
@@ -35,12 +35,11 @@ public class AsyncAction implements Action {
 			start(context);
 		}
 	
+		StatusEnum status = getResult(future);
 		if(timeout.isTimeout()) {
-			StatusEnum status = getResult(future);
 			reset();
 			return status == StatusEnum.RUNNING ? StatusEnum.FAILURE : status;
 		} else {
-			StatusEnum status = getResult(future);
 			if(status == StatusEnum.RUNNING)
 				return StatusEnum.RUNNING;
 

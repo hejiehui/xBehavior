@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Sequence extends Composite {
 	private boolean reactive;
-	private int currentIndex;
+	private volatile int currentIndex;
 
 	public Sequence() {
 		this(false);

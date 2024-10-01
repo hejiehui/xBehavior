@@ -5,8 +5,8 @@
 	<artifactId>xbehavior</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <name>xross unit</name>
-    <description>The runtime for xross unit model</description>
-    <url>https://github.com/hejiehui/xUnit/tree/master/com.xrosstools.xunit</url>
+    <description>The runtime for xross behavior model</description>
+    <url>https://github.com/hejiehui/xBehavior/tree/master/com.xrosstools.xbehavior</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -14,9 +14,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:hejiehui/xExpression.git</connection>
-        <developerConnection>scm:git:git@github.com:hejiehui/xExpression.git</developerConnection>
-        <url>git@github.com:hejiehui/xExpression.git</url>
+        <connection>scm:git:git@github.com:hejiehui/xBehavior.git</connection>
+        <developerConnection>scm:git:git@github.com:hejiehui/xBehavior.git</developerConnection>
+        <url>git@github.com:hejiehui/xBehavior.git</url>
     </scm>
     <developers>
         <developer>

@@ -1,7 +1,7 @@
 package com.xrosstools.xbehavior;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import com.xrosstools.xbehavior.def.ValueProperty;
 
@@ -12,9 +12,9 @@ public class Parallel extends Composite {
 
     private Mode mode;
     private Property<Integer> minSuccess;
-	private Set<Integer> completed;
-	private int successCounter;
-	private int failureCounter;
+	private volatile Set<Integer> completed;
+	private volatile int successCounter;
+	private volatile int failureCounter;
 	
 	public Parallel() {}
 
@@ -36,7 +36,7 @@ public class Parallel extends Composite {
 	 */
 	public StatusEnum tick(Blackboard context) {
 		if(completed == null) {
-			completed = new HashSet<>();
+			completed = new ConcurrentSkipListSet<>();
 			int min = mode == Mode.ANY ? 1 : mode == Mode.ALL ? size() : minSuccess.get(context);
 			successCounter = min;
 			failureCounter = size() - min;

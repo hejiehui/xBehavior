@@ -42,7 +42,7 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
         //Actions
         register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_ASYNCHRONOUS, PROP_TIMEOUT, PROP_TIME_UNIT, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_EXPRESSION, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_LEFT_EXPRESSION, PROP_OPERATOR, PROP_RIGHT_EXPRESSION, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.FIXED_STATUS).attributes(PROP_NAME, PROP_STATUS).nodes(PROP_DESCRIPTION);
 

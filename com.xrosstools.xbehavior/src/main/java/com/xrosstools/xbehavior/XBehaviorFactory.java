@@ -189,7 +189,7 @@ public class XBehaviorFactory implements PropertyConstants {
             	if(Condition.Mode.valueOf(get(PROP_MODE)) == Condition.Mode.CALLBACK)
             		node = BehaviorDef.callbackConditionDef(get(PROP_IMPLEMENTATION));
             	else
-            		node = BehaviorDef.exprConditionDef(evaluator, get(PROP_EXPRESSION));
+            		node = BehaviorDef.exprConditionDef(evaluator, get(PROP_LEFT_EXPRESSION), get(PROP_OPERATOR), get(PROP_RIGHT_EXPRESSION));
 				break;
             case ACTION:
             	boolean async = Boolean.parseBoolean(get(PROP_ASYNCHRONOUS));

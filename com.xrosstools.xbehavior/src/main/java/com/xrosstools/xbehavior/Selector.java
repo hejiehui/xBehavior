@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Selector extends Composite {
 	private boolean reactive;
-	private int currentIndex;
+	private volatile int currentIndex;
 	
 	public Selector() {
 		this(false);

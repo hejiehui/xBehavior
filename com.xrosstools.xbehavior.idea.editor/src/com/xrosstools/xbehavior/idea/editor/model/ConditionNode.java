@@ -8,40 +8,22 @@ public class ConditionNode extends BehaviorNode{
     }
 
     private PropertyEntry<Mode> mode = enumProperty(PROP_MODE, DEFAULT_CONDITION_MODE, Mode.values());
-    private PropertyEntry<String> expression = stringProperty(PROP_EXPRESSION);
+    private PropertyEntry<String> leftExpression = stringProperty(PROP_LEFT_EXPRESSION);
+    private PropertyEntry<String> operator = enumProperty(PROP_OPERATOR, ConditionOperator.EQUAL.getText(), ConditionOperator.getAllOperatorText());
+    private PropertyEntry<String> rightExpression = stringProperty(PROP_RIGHT_EXPRESSION);
     private PropertyEntry<String> implementation = stringProperty(PROP_IMPLEMENTATION);
 
     public ConditionNode() {
         super(BehaviorNodeType.CONDITION);
         setOutputLimit(0);
         register(mode);
-        register(expression, ()-> getMode() == Mode.EXPRESSION);
+        register(leftExpression, ()-> getMode() == Mode.EXPRESSION);
+        register(operator, ()-> getMode() == Mode.EXPRESSION);
+        register(rightExpression, ()-> getMode() == Mode.EXPRESSION && ConditionOperator.locate(operator.get()).requireParameter());
         register(implementation, ()-> getMode() == Mode.CALLBACK);
-    }
-
-    public String getExpression() {
-        return expression.get();
-    }
-
-    public void setExpression(String _expression) {
-        expression.set(_expression);
     }
 
     public Mode getMode() {
         return mode.get();
     }
-
-    public void setMode(Mode _mode) {
-        mode.set(_mode);
-    }
-
-    public String getImplementation() {
-        return implementation.get();
-    }
-
-    public void setImplementation(String _implementation) {
-        implementation.set(_implementation);
-    }
-
-
 }

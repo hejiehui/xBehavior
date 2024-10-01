@@ -5,7 +5,9 @@ public interface PropertyConstants {
     String PROP_DESCRIPTION = "description";
 
     String PROP_COUNT = "count";
-    String PROP_EXPRESSION = "expression";
+    String PROP_LEFT_EXPRESSION = "left_expression";
+    String PROP_OPERATOR = "operator";
+    String PROP_RIGHT_EXPRESSION = "right_expression";
     String PROP_MODE = "mode";
     String PROP_REPEAT_UNTIL_FAILURE = "repeat_until_failure";
     String PROP_REACTIVE = "reactive";

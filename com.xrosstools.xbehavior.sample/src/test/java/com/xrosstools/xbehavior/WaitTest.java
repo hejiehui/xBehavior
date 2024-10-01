@@ -36,7 +36,7 @@ public class WaitTest {
 		test(FAILURE);
 	}
 
-//	@Test
+	@Test
 	public void testRunning() {
 		test(RUNNING);
 	}

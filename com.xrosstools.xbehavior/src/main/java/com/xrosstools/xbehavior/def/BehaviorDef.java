@@ -84,11 +84,11 @@ public abstract class BehaviorDef implements PropertyConstants {
 		};
 	}	
 
-	public static BehaviorDef exprConditionDef(final Evaluator evaluator, final String expressionStr) {
+	public static BehaviorDef exprConditionDef(final Evaluator evaluator, final String leftExpressionStr, final String operatorStr, final String rightExpressionStr) {
 		return new BehaviorDef() {
 			@Override
 			public Behavior create() {
-				return new ExpressionCondition(evaluator, expressionStr);
+				return new ExpressionCondition(evaluator, leftExpressionStr, operatorStr, rightExpressionStr);
 			}
 		};
 	}

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 public class Timeout {
 	private long delay;
 	private TimeUnit timeUnit;
-	private long startTime;
+	private volatile long startTime;
 	
 	private long normalizedDelay;
 	

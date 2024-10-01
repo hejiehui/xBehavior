@@ -8,7 +8,7 @@ public class Sleep implements Action {
 	private Property<Long> delay;
 	private TimeUnit timeUnit;
 
-	private Timeout timeout;
+	private volatile Timeout timeout;
 
 	public Sleep(long delay, TimeUnit timeUnit) {
 		this(ValueProperty.of(delay), timeUnit);

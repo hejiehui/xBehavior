@@ -8,8 +8,8 @@ public class XpressionEvaluator implements Evaluator {
 	private XpressionCompiler compiler = new XpressionCompiler();
 	
 	@Override
-	public Object compile(String expressionStr) {
-		return compiler.compile(expressionStr);
+	public Object compile(String leftExpressionStr, String operatorStr, String rightExpressionStr) {
+		return compiler.compile(leftExpressionStr, operatorStr, rightExpressionStr);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -16,7 +16,8 @@ public class Wait extends Decorator {
 	private Property<Long> delay;
 	private TimeUnit timeUnit;
 
-	private Future<StatusEnum> future;
+	private volatile Future<StatusEnum> future;
+	private volatile boolean started = false;
 
 	public Wait(Long delay, TimeUnit timeUnit) {
 		this(ValueProperty.of(delay), timeUnit);
@@ -29,21 +30,43 @@ public class Wait extends Decorator {
 
 	@Override
 	public StatusEnum tick(final Blackboard context) {
-		if(future == null) {
-			final Behavior actualAction = getDecorated();
+		start(context);
 
-			future = executor.schedule(new Callable<StatusEnum>() {
-				public StatusEnum call() throws Exception {
-					return actualAction.tick(context);
-				}
-			}, delay.get(context), timeUnit);
-		}
-
-		StatusEnum status = getResult(future);
+		StatusEnum status = getResult(context);
 		
+		if(status == StatusEnum.RUNNING)
+			return StatusEnum.RUNNING;
+		
+		reset();
+		return status;
+	}
+	
+	private void start(final Blackboard context) {
+		if(started)
+			return;
+
+		future = executor.schedule(new Callable<StatusEnum>() {
+			public StatusEnum call() throws Exception {
+				return getDecorated().tick(context);
+			}
+		}, delay.get(context), timeUnit);
+		
+		started = true;
+	}
+
+	private StatusEnum getResult(Blackboard context) {
+		if(future == null)
+			return getDecorated().tick(context);
+			
 		if(future.isDone()) {
-			reset();
-			return status;
+			try {
+				StatusEnum status = future.get();
+				future = null;
+				return status;
+			} catch (Exception e) {
+				future = null;
+				return StatusEnum.FAILURE;
+			}
 		}
 
 		return StatusEnum.RUNNING;
@@ -52,5 +75,6 @@ public class Wait extends Decorator {
 	public void resetParent() {
 		resetFuture(future);
 		future = null;
+		started = false;
 	}
 }

@@ -11,10 +11,10 @@ public class Repeat extends Decorator {
 	private Property<Long> delay = ValueProperty.of(-1L);
 	private TimeUnit timeUnit = TimeUnit.SECONDS;
 
-	private boolean started = false;
-	private Timeout timeout;
-	private int max = -1;
-	private int count = 0;
+	private volatile boolean started = false;
+	private volatile Timeout timeout;
+	private volatile int max = -1;
+	private volatile int count = 0;
 	
 	public Repeat(Property<Long> delay, TimeUnit timeUnit, boolean repeatUntilFailure) {
 		this.delay = delay;
@@ -58,6 +58,7 @@ public class Repeat extends Decorator {
 			return;
 
 		max = maxAttempt.get(context);
+		count = 0;
 		timeout = new Timeout(delay.get(context), timeUnit);
 		timeout.start();
 		started = true;
