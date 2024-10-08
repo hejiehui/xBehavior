@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.sample.TestBehavior;
+
 public class DecoratorTest {
 	private Boolean resetParent;
 	private TestBehavior internal;

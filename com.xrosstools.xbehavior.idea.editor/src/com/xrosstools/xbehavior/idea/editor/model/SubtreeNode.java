@@ -19,6 +19,10 @@ public class SubtreeNode extends BehaviorNode {
         this.diagram = diagram;
     }
 
+    public BehaviorTreeDiagram getDiagram() {
+        return diagram;
+    }
+
     private String[] getCandidates() {
 
         List<String> names = new ArrayList<>();
@@ -28,5 +32,9 @@ public class SubtreeNode extends BehaviorNode {
             names.add(node.getName());
         }
         return names.toArray(new String[names.size()]);
+    }
+
+    public String getSubtree() {
+        return subtree.get();
     }
 }

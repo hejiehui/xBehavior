@@ -1,4 +1,8 @@
-package com.xrosstools.xbehavior;
+package com.xrosstools.xbehavior.sample;
+
+import com.xrosstools.xbehavior.Behavior;
+import com.xrosstools.xbehavior.Blackboard;
+import com.xrosstools.xbehavior.StatusEnum;
 
 public class TestBehavior implements Behavior {
 	private StatusEnum initStatus = StatusEnum.RUNNING;
@@ -12,11 +16,11 @@ public class TestBehavior implements Behavior {
 	
 	private int resetCount;
 
-	TestBehavior() {
+	public TestBehavior() {
 		this(StatusEnum.SUCCESS);
 	}
 
-	TestBehavior(StatusEnum status) {
+	public TestBehavior(StatusEnum status) {
 		this.endStatus = status;
 	}
 	

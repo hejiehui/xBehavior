@@ -26,4 +26,8 @@ public class ConditionNode extends BehaviorNode{
     public Mode getMode() {
         return mode.get();
     }
+
+    public String getImplementation() {
+        return implementation.get();
+    }
 }

@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.sample.TestBehavior;
+
 public class WaitTest {
 	private Wait test;
 	private Blackboard bb;

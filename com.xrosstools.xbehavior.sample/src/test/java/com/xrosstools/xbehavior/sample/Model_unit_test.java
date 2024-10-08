@@ -1,7 +1,7 @@
 package com.xrosstools.xbehavior.sample;
 
 import com.xrosstools.xbehavior.Behavior;
-import com.xrosstools.xbehavior.XBehaviorFactory;
+import com.xrosstools.xbehavior.XbehaviorFactory;
 
 /**
  IMPORTANT NOTE!
@@ -250,12 +250,12 @@ public class Model_unit_test {
         }
     }
 
-    private static volatile XBehaviorFactory factory;
-    private static XBehaviorFactory load()  {
+    private static volatile XbehaviorFactory factory;
+    private static XbehaviorFactory load()  {
         if(factory == null) {
             synchronized(Model_unit_test.class) {
                 if(factory == null)
-                    factory = XBehaviorFactory.load("model_unit_test.xbehavior");
+                    factory = XbehaviorFactory.load("model_unit_test.xbehavior");
             }
         }
         return factory;

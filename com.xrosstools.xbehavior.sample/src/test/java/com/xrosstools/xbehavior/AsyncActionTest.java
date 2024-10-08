@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.sample.StatusAction;
+
 public class AsyncActionTest {
 	private long delay = 1000;
 	

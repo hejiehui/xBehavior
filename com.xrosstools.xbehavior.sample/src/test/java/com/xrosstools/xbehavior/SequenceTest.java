@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.sample.TestBehavior;
+
 public class SequenceTest {
 	private Sequence test;
 	private TestBehavior a, b, c;

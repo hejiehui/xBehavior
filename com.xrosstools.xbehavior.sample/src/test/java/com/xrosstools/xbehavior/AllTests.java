@@ -4,6 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import com.xrosstools.xbehavior.sample.BehaviorUnitTest;
+
 @RunWith(Suite.class)
 @SuiteClasses({
 	//Action
@@ -27,6 +29,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	ParallelTest.class,
 	
 	PropertyParserTest.class,
+	
+	BehaviorUnitTest.class,
 })
 public class AllTests {
 

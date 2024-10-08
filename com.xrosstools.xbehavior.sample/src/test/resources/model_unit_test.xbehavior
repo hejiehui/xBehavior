@@ -86,8 +86,8 @@
   <subtree name="subtree sucess" subtree="selector success"/>
   <condition implementation="com.xrosstools.xbehavior.sample.ConditionByA" mode="CALLBACK" name="callback true"/>
   <condition implementation="com.xrosstools.xbehavior.sample.ConditionByA" mode="CALLBACK" name="callback false"/>
-  <condition expression="A.isEmpty()" mode="EXPRESSION" name="expression true"/>
-  <condition expression="A.isEmpty()" mode="EXPRESSION" name="expression false"/>
+  <condition left_expression="A" mode="EXPRESSION" name="expression false" operator="&gt;" right_expression="B"/>
+  <condition left_expression="A" mode="EXPRESSION" name="expression true" operator="&gt;=" right_expression="1.23"/>
  </nodes>
  <connections>
   <connection source_index="29" target_index="30"/>

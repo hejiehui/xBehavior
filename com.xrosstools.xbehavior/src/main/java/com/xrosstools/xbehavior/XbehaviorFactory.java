@@ -26,14 +26,14 @@ import com.xrosstools.xbehavior.def.CompositeDef;
 import com.xrosstools.xbehavior.def.DecoratorDef;
 import com.xrosstools.xbehavior.def.PropertyConstants;
 
-public class XBehaviorFactory implements PropertyConstants {
+public class XbehaviorFactory implements PropertyConstants {
     private static final String NODES = "nodes";
 
     private static final String CONNECTIONS = "connections";
     private static final String SOURCE_INDEX = "source_index";
     private static final String TARGET_INDEX = "target_index";
 
-    private static final ConcurrentHashMap<String, XBehaviorFactory> factories = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, XbehaviorFactory> factories = new ConcurrentHashMap<>();
 	private Evaluator evaluator;
 	private Map<String, BehaviorDef> treeDefs = new HashMap<>();
 	
@@ -43,7 +43,7 @@ public class XBehaviorFactory implements PropertyConstants {
 		return treeDefs.get(name).create();
 	}
     
-	public static XBehaviorFactory load(URL url) {
+	public static XbehaviorFactory load(URL url) {
 	    String path = url.toString();
 	    
 	    if(isLoaded(url.toString()))
@@ -58,11 +58,9 @@ public class XBehaviorFactory implements PropertyConstants {
 	
 	/**
 	 * It will first check model file from file path, if it does not exist, it will try classpath then. 
-	 * @param path
-	 * @return
-	 * @throws Exception
+	 * @param path path of the model file
 	 */
-	public static XBehaviorFactory load(String path) {
+	public static XbehaviorFactory load(String path) {
         if(isLoaded(path))
             return factories.get(path);
         
@@ -74,7 +72,7 @@ public class XBehaviorFactory implements PropertyConstants {
 			else {
 				ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 				if (classLoader == null) {
-					classLoader = XBehaviorFactory.class.getClassLoader();
+					classLoader = XbehaviorFactory.class.getClassLoader();
 				}
 				in = classLoader.getResource(path).openStream();
 			}
@@ -85,13 +83,13 @@ public class XBehaviorFactory implements PropertyConstants {
         return getFactory(path, load(in));
 	}
 	
-	private static XBehaviorFactory getFactory(String path, XBehaviorFactory factory) {
-		XBehaviorFactory oldFactory = factories.putIfAbsent(path, factory);        
+	private static XbehaviorFactory getFactory(String path, XbehaviorFactory factory) {
+		XbehaviorFactory oldFactory = factories.putIfAbsent(path, factory);        
         return oldFactory == null ? factory : oldFactory;
 	}
 	
-	public static XBehaviorFactory load(InputStream in) {
-		XBehaviorFactory factory = null;
+	public static XbehaviorFactory load(InputStream in) {
+		XbehaviorFactory factory = null;
 		try{
 			Document doc= DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(in);
 			factory = getFromDocument(doc);
@@ -111,8 +109,8 @@ public class XBehaviorFactory implements PropertyConstants {
 	    return factories.containsKey(path);
 	}
     
-	private static XBehaviorFactory getFromDocument(Document doc) throws Exception {
-		XBehaviorFactory factory = new XBehaviorFactory();
+	private static XbehaviorFactory getFromDocument(Document doc) throws Exception {
+		XbehaviorFactory factory = new XbehaviorFactory();
 		factory.readDiagram(doc);
 		return factory;
 	}

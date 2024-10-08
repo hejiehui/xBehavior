@@ -5,12 +5,12 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SpringSupport implements ApplicationContextAware {
+public class XbehaviorSpring implements ApplicationContextAware {
     private static volatile ApplicationContext applicationContext;
 
     public static void enable(ApplicationContext applicationContext) {
-        if (SpringSupport.applicationContext == null) {
-            SpringSupport.applicationContext = applicationContext;
+        if (XbehaviorSpring.applicationContext == null) {
+            XbehaviorSpring.applicationContext = applicationContext;
         }
     }
   
@@ -27,7 +27,7 @@ public class SpringSupport implements ApplicationContextAware {
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) {
-		if(SpringSupport.applicationContext == null)
-			SpringSupport.applicationContext = applicationContext;
+		if(XbehaviorSpring.applicationContext == null)
+			XbehaviorSpring.applicationContext = applicationContext;
 	}  
 }

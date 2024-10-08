@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.xrosstools.xbehavior.def.ValueProperty;
+import com.xrosstools.xbehavior.sample.TestBehavior;
 
 public class ParallelTest {
 	private Parallel test;

@@ -1,14 +1,12 @@
 package com.xrosstools.xbehavior.idea.editor.parts;
 
 import com.xrosstools.idea.gef.figures.AbstractAnchor;
-import com.xrosstools.idea.gef.figures.ChopboxAnchor;
 import com.xrosstools.idea.gef.figures.Figure;
 import com.xrosstools.idea.gef.figures.MidpointAnchor;
 import com.xrosstools.idea.gef.parts.AbstractConnectionEditPart;
 import com.xrosstools.idea.gef.parts.AbstractGraphicalEditPart;
 import com.xrosstools.idea.gef.parts.AbstractNodeEditPart;
 import com.xrosstools.idea.gef.parts.EditPolicy;
-import com.xrosstools.idea.gef.policies.NodeEditPolicy;
 import com.xrosstools.xbehavior.idea.editor.figures.BehaviorNodeFigure;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorNode;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;

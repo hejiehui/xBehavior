@@ -238,34 +238,30 @@ public class BehaviorUnitTest {
     @Test
     public void testExpressionFalse() {
         Behavior behavior = Model_unit_test.ExpressionFalse.create();
-        bb.set(ConditionByA.A, "asc");
+        bb.set(ConditionByA.A, 123);
+        bb.set(ConditionByA.B, 456);
         assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
-//        bb.set(ConditionByA.A, 123);
-//        bb.set(ConditionByA.B, 456);
-//        assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
-//
-//        bb.set(ConditionByA.A, 0.1);
-//        bb.set(ConditionByA.B, 0.2);
-//        assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
-//
-//        bb.set(ConditionByA.A, "ABC");
-//        bb.set(ConditionByA.B, "DEF");
-//        assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
+
+        bb.set(ConditionByA.A, 0.1);
+        bb.set(ConditionByA.B, 0.2);
+        assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
+
+        bb.set(ConditionByA.A, "ABC");
+        bb.set(ConditionByA.B, "DEF");
+        assertEquals(StatusEnum.FAILURE, behavior.tick(bb));
     }
 
     @Test
     public void testExpressionTrue() {
         Behavior behavior = Model_unit_test.ExpressionTrue.create();
-        bb.set(ConditionByA.A, "");
+        bb.set(ConditionByA.A, 1233);
         assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
-//        bb.set(ConditionByA.A, 1233);
-//        assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
-//
-//        bb.set(ConditionByA.A, 12.34);
-//        assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
-//
-//        bb.set(ConditionByA.A, 11L);
-//        assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
+
+        bb.set(ConditionByA.A, 12.34);
+        assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
+
+        bb.set(ConditionByA.A, 11L);
+        assertEquals(StatusEnum.SUCCESS, behavior.tick(bb));
     }
 }
 

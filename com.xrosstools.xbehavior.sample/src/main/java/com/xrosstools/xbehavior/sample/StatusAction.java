@@ -1,4 +1,8 @@
-package com.xrosstools.xbehavior;
+package com.xrosstools.xbehavior.sample;
+
+import com.xrosstools.xbehavior.Action;
+import com.xrosstools.xbehavior.Blackboard;
+import com.xrosstools.xbehavior.StatusEnum;
 
 public class StatusAction implements Action {
 	private StatusEnum[] sequence;

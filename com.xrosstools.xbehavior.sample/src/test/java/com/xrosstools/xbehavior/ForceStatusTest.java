@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.xrosstools.xbehavior.sample.TestBehavior;
+
 public class ForceStatusTest {
 	private final int attempt = 5;
 	private Blackboard bb;

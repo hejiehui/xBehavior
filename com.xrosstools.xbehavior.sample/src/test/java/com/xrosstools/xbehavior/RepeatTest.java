@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.xrosstools.xbehavior.def.ValueProperty;
+import com.xrosstools.xbehavior.sample.StatusAction;
 
 public class RepeatTest {
 	private Repeat test;

@@ -106,7 +106,7 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
 
     @Override
     public EditPartFactory createEditPartFactory() {
-        return new BehaviorTreePartFactory();
+        return new BehaviorTreePartFactory(project);
     }
 
     @Override

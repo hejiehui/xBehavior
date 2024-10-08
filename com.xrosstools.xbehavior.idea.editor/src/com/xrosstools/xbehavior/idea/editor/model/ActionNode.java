@@ -18,4 +18,8 @@ public class ActionNode extends BehaviorNode {
         register(timeout, ()->asynchronous.get());
         register(timeUnit, ()->asynchronous.get());
     }
+
+    public String getImplementation() {
+        return implementation.get();
+    }
 }

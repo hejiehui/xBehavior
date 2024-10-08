@@ -1,6 +1,6 @@
 package com.xrosstools.xbehavior.def;
 
-import com.xrosstools.xbehavior.SpringSupport;
+import com.xrosstools.xbehavior.XbehaviorSpring;
 
 public class InstatnceFactory implements PropertyConstants {
 	private static boolean enableSpring;
@@ -21,7 +21,7 @@ public class InstatnceFactory implements PropertyConstants {
 
 		Object behavior = null;
 		if (enableSpring)
-			behavior = SpringSupport.getBean(className);
+			behavior = XbehaviorSpring.getBean(className);
 
 		if (behavior == null)
 			try {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior_tree evaluator="com.xrosstools.xbehavior.XpressionEvaluator">
+ <description/>
+ <nodes>
+  <condition implementation="com.xrosstools.xbehavior.sample.spring.ConditionBean" mode="CALLBACK" name="ConditionBean"/>
+  <sequence name="sequence" reactive="false"/>
+  <action asynchronous="false" implementation="com.xrosstools.xbehavior.sample.spring.ActionBean" name="ActionBean"/>
+ </nodes>
+ <connections>
+  <connection source_index="1" target_index="0"/>
+  <connection source_index="1" target_index="2"/>
+ </connections>
+</behavior_tree>
