@@ -100,20 +100,102 @@ Wait节点会在等待给定时间后再调用子节点
 ## 基础节点
 
 ### Condition
-只返回true/false
-* Mode。节点调用模式，有两种。MAX_ATTEMPT，重复调用直到给定的最大重复次数；TIMEOUT，重复调用直到给定的时间用完，此选项将额外显示Time unit属性
+Condition节点根据回调函数返回的或表达式的值是true还是false来决定返回SUCCESS或者FAILURE。
+* Mode。求值模式，有两种。CALLBACK方式，通过调用Implementation指定类实例类来判断；EXPRESSION，根据Left expression，Operator和Right expression相结合的表达式进行判断
+* Implementation。CALLBACK模式时，需要调用的实现com.xrosstools.xbehavior.Condition接口的回调函数
+* Left expression。左侧表达式，表达式介绍见下
+* Operator。连接左右表达式的操作符。选项具体见下
+* Right expression。右侧表达式
+
+#### 表达式介绍
+支持对Blackboard中变量的引用，支持一般Java表达式语法，例如变量引用A；变量运算A+(B+C)*E；变量方法调用A.method(para1, para2)；基于方括号的数组元素调用等
+数字可以直接写，例如1234.5678
+字符串需要单引号进行标注，以和变量名区分，例如‘abcd’
+
+#### Operator的类型
+* 比较操作。==，<>，>，>=，<，<=
+* 字符串操作。STARTS WITH，ENDS WITH，CONTAINS，MATCHES（正则表达式匹配），NOT STARTS WITH，NOT ENDS WITH，NOT CONTAINS，NOT MATCHES（正则表达式匹配）
+* NULL判断。IS NULL，IS NOT NULL
+* TRUE/FALSE判断。IS TRUE，IS FALSE
+* 范围判断。BETWEEN，NOT BETWEEN，IN，NOT IN。用法同SQL语句相同语法
 
 ### Action
+返回StatusEnum的用户自定义行为类。接口为com.xrosstools.xbehavior.Action，需实现以下方法：
 
+	StatusEnum tick(Blackboard context);
+	
+	/**
+	 * Reset current node, like stopping running node when necessary
+	 * rest is usually invoked by parent node or self when tick completed 
+	 */
+	void reset();
+* Asynchronous。是否异步执行。缺省为false，如果用户选择true，系统将对其进行异步调用，以避免阻塞主线程。此时则需要额外设置Timeout和Time unit属性
+* Implementation。实现Action接口的用户自定义类
+* Timeout。异步执行的最大超时时间。超时将返回FAILURE
+* Time unit。超时时间单位
+
+如果设置了Implementation，则双击Action或Condition节点会打开对应实现代码。
 
 ### Fixed status
+返回给定
 
-### Sleep和Subtree
+### Sleep
+### Subtree
+Subtree节点将调用给定的子树。
+* Subtree。给定子树的名称，当前模型所有设置了Name属性的顶层节点都可以选择
 
+双击Subtree将定位到指定的子树
 
+# 运行时依赖
+运行行为树依赖xbehavior
+如果使用了缺省的Evaluator来处理表达式，那么需要xpression
+如果还要支持spring，需要添加spring-context和spring-beans：
 
+        <dependency>
+            <groupId>com.xrosstools</groupId>
+            <artifactId>xbehavior</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xrosstools</groupId>
+            <artifactId>xpression</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.3.10</version>
+        </dependency>
 
+## 使用Spring
+如果用户自定义Action或Condition想通过Spring加载，或者里面使用了Spring的组装机制，可以使用XbehaviorSpring类来进行支持。方法有2
+* 定义Bean的方式，代码见下
+* 直接调用XbehaviorSpring.enable(ApplicationContext applicationContext)方法
 
+以上两种均可
+
+      @Configuration
+      @ComponentScan
+      public class SpringSupportTest {
+          @Bean
+          XbehaviorSpring createSpringBeanFactory() {
+              return new XbehaviorSpring();
+          }
+      
+          @BeforeClass
+          public static void setup() throws Exception {
+              ApplicationContext context = new AnnotationConfigApplicationContext(SpringSupportTest.class);
+          }
 
 
 
