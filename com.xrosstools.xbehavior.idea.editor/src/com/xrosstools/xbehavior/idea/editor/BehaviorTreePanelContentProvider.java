@@ -28,16 +28,31 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
 
     private BehaviorTreeDiagramFactory factory = new BehaviorTreeDiagramFactory();
 
+    private BehaviorTreeContextMenuProvider contextMenuProvider;
+    private BehaviorTreeOutlineContextMenuProvider outlineContextMenuProvider;
+    private GenerateHelperAction generateHelperAction;
+
     public BehaviorTreePanelContentProvider(Project project, VirtualFile virtualFile) {
         super(virtualFile);
         this.project = project;
         this.virtualFile = virtualFile;
+
+        this.contextMenuProvider = new BehaviorTreeContextMenuProvider(project);
+        this.outlineContextMenuProvider = new BehaviorTreeOutlineContextMenuProvider((project));
+        this.generateHelperAction = new GenerateHelperAction(project, virtualFile);
     }
 
     @Override
     public BehaviorTreeDiagram getContent() throws Exception {
         diagram = factory.getFromXML(DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(virtualFile.getInputStream()));
+        diagramChange();
         return diagram;
+    }
+
+    private void diagramChange() {
+        contextMenuProvider.setDiagram(diagram);
+        outlineContextMenuProvider.setDiagram(diagram);
+        generateHelperAction.setDiagram(diagram);
     }
 
     @Override
@@ -48,12 +63,12 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
 
     @Override
     public ContextMenuProvider getContextMenuProvider() {
-        return new BehaviorTreeContextMenuProvider(project, diagram);
+        return contextMenuProvider;
     }
 
     @Override
     public ContextMenuProvider getOutlineContextMenuProvider() {
-        return new BehaviorTreeOutlineContextMenuProvider(project, diagram);
+        return outlineContextMenuProvider;
     }
 
     @Override
@@ -64,7 +79,7 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
             palette.add(createNodeButton(type.getDisplayName(), type.getTypeIcon(), type.getTypeClass()));
         }
 
-        palette.add(createPaletteButton(new GenerateHelperAction(project, virtualFile, diagram), GENERATE_HELPER_ICON, GENERATE_HELPER));
+        palette.add(createPaletteButton(generateHelperAction, GENERATE_HELPER_ICON, GENERATE_HELPER));
     }
 
     private JButton createConnectionButton() {
@@ -92,15 +107,6 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
     @Override
     public ActionGroup createToolbar() {
         DefaultActionGroup actionGroup = new DefaultActionGroup();
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, true, 1), ALIGN_BOTTOM, ALIGN_BOTTOM_MSG));
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, true, 0.5f), ALIGN_MIDDLE, ALIGN_MIDDLE_MSG));
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, true, 0), ALIGN_TOP, ALIGN_TOP_MSG));
-//        actionGroup.addSeparator();
-//
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, false, 0), ALIGN_LEFT, ALIGN_LEFT_MSG));
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, false, 0.5f), ALIGN_CENTER, ALIGN_CENTER_MSG));
-//        actionGroup.add(createToolbarAction(new DecisionTreeLayoutAction(diagram, false, 1), ALIGN_RIGHT, ALIGN_RIGHT_MSG));
-
         return actionGroup;
     }
 
@@ -125,5 +131,4 @@ public class BehaviorTreePanelContentProvider extends AbstractPanelContentProvid
         layoutAlgorithm.layout(diagram);
         getEditorPanel().refreshVisual();
     }
-
 }

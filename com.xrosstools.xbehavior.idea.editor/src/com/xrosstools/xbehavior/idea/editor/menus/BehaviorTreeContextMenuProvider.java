@@ -13,8 +13,11 @@ import javax.swing.*;
 public class BehaviorTreeContextMenuProvider extends ContextMenuProvider implements BehaviorTreeMessage, PropertyConstants {
     private Project project;
     private BehaviorTreeDiagram diagram;
-    public BehaviorTreeContextMenuProvider(Project project, BehaviorTreeDiagram diagram) {
+    public BehaviorTreeContextMenuProvider(Project project) {
         this.project = project;
+    }
+
+    public void setDiagram(BehaviorTreeDiagram diagram) {
         this.diagram = diagram;
     }
 

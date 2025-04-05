@@ -9,10 +9,6 @@ import com.xrosstools.idea.gef.PanelContentProvider;
 import org.jetbrains.annotations.NotNull;
 
 public class BehaviorTreeEditorProvider extends AbstractDiagramEditorProvider {
-    public static final String TREE = "tree";
-    public static final String NODE = "node";
-    public static final String CONNECTION = "connection";
-
     @Override
     public FileType getFileType() {
         return XbehaviorFileType.INSTANCE;

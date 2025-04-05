@@ -11,24 +11,19 @@ import javax.swing.*;
 public class BehaviorTreeOutlineContextMenuProvider extends ContextMenuProvider implements BehaviorTreeMessage {
     private Project project;
     private BehaviorTreeDiagram diagram;
-//    private NamedElementContainerContextMenuProvider namedElementContainerProvider;
-//    private NamedElementContextMenuProvider namedElementContextMenuProvider;
 
-    public BehaviorTreeOutlineContextMenuProvider(Project project, BehaviorTreeDiagram diagram) {
+    public BehaviorTreeOutlineContextMenuProvider(Project project) {
         this.project = project;
-        this.diagram = diagram;
-//        namedElementContextMenuProvider = new NamedElementContextMenuProvider(project, diagram);
-//        namedElementContainerProvider = new NamedElementContainerContextMenuProvider(project, diagram);
     }
+
+    public void setDiagram(BehaviorTreeDiagram diagram) {
+        this.diagram = diagram;
+    }
+
 
     public JPopupMenu buildContextMenu(Object selected) {
         AbstractTreeEditPart editPart = (AbstractTreeEditPart )selected;
         JPopupMenu menu = new JPopupMenu();
-//        if(editPart instanceof NamedElementContainerTreePart) {
-//            namedElementContainerProvider.buildContextMenu(menu, (NamedElementContainerTreePart)editPart);
-//        }else if(editPart instanceof NamedElementTreePart) {
-//            namedElementContextMenuProvider.buildContextMenu(menu, (NamedElementTreePart)editPart);
-//        }
         return menu;
     }
 }
