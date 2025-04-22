@@ -6,8 +6,8 @@ import com.xrosstools.xbehavior.idea.editor.model.BehaviorNode;
 import javax.swing.*;
 
 public class BehaviorNodeTreePart extends NodeTreePart {
-    public BehaviorNodeTreePart(Object model) {
-        super(model, true);
+    public BehaviorNodeTreePart() {
+        super(true);
     }
 
     public BehaviorNode getBehaviorNode() {

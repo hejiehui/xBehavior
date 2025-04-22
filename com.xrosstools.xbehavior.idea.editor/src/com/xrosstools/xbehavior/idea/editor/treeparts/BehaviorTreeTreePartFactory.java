@@ -13,9 +13,9 @@ public class BehaviorTreeTreePartFactory implements EditPartFactory {
             return part;
 
         if(model instanceof BehaviorTreeDiagram)
-            part = new BehaviorTreeDiagramTreePart(model);
+            part = new BehaviorTreeDiagramTreePart();
         else if(model instanceof BehaviorNode)
-            part = new BehaviorNodeTreePart(model);
+            part = new BehaviorNodeTreePart();
 
         part.setModel(model);
         return part;

@@ -2,16 +2,15 @@ package com.xrosstools.xbehavior.idea.editor.parts;
 
 import com.xrosstools.idea.gef.figures.Figure;
 import com.xrosstools.idea.gef.figures.FreeformLayout;
-import com.xrosstools.idea.gef.parts.AbstractDiagramEditPart;
+import com.xrosstools.idea.gef.parts.AbstractNodeContainerEditPart;
 import com.xrosstools.idea.gef.parts.EditPolicy;
-import com.xrosstools.idea.gef.policies.NodeContainerEditPolicy;
 import com.xrosstools.xbehavior.idea.editor.layout.LayoutAlgorithm;
 import com.xrosstools.xbehavior.idea.editor.model.BehaviorTreeDiagram;
 import com.xrosstools.xbehavior.idea.editor.policies.BTNodeContainerEditPolicy;
 
 import java.beans.PropertyChangeEvent;
 
-public class BehaviorTreeDiagramPart extends AbstractDiagramEditPart {
+public class BehaviorTreeDiagramPart extends AbstractNodeContainerEditPart {
     private LayoutAlgorithm layout = new LayoutAlgorithm();
 
     protected Figure createFigure() {

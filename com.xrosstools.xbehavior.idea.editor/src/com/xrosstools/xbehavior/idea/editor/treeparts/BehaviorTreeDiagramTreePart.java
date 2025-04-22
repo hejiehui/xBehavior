@@ -10,12 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BehaviorTreeDiagramTreePart extends AbstractTreeEditPart implements PropertyChangeListener {
-    private BehaviorTreeDiagram diagram;
-    public BehaviorTreeDiagramTreePart(Object model) {
-        super(model);
-        diagram = (BehaviorTreeDiagram)model;
-    }
-
     @Override
     public Icon getImage() {
         return XbehaviorIcons.TREE;
@@ -23,7 +17,7 @@ public class BehaviorTreeDiagramTreePart extends AbstractTreeEditPart implements
 
     public List getModelChildren() {
         List children = new ArrayList();
-        children.addAll(diagram.getRoots());
+        children.addAll(((BehaviorTreeDiagram )getModel()).getRoots());
         return children;
     }
 }

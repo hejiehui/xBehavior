@@ -80,12 +80,4 @@ public class GenerateHelperAction extends AbstractCodeGenerator implements Behav
 
         return constants;
     }
-
-    private boolean isEmpty(String value) {
-        return value == null || value.trim().length() == 0;
-    }
-
-    public Command createCommand() {
-        return null;
-    }
 }
