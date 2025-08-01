@@ -21,7 +21,7 @@ public class XbehaviorSpring implements ApplicationContextAware {
     	try {
     		return applicationContext.getBean(Class.forName(className));
     	}catch(Exception e) {
-    		return new IllegalArgumentException(className, e);
+    		return null;
     	}
     }
 
