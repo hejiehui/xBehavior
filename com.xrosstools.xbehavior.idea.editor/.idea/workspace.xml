@@ -14,28 +14,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/ActionNode.java">
+        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="342">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/ActionNodePart.java">
+        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="296">
+              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/PropertyConstants.java">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="665">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -64,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/lang/Class.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24776">
+            <state relative-caret-position="24738">
               <caret line="1381" column="18" selection-start-line="1381" selection-start-column="18" selection-end-line="1381" selection-end-column="18" />
             </state>
           </provider>
@@ -208,10 +208,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1267" />
-    <option name="y" value="5" />
+    <option name="x" value="549" />
+    <option name="y" value="50" />
     <option name="width" value="1734" />
-    <option name="height" value="1395" />
+    <option name="height" value="1359" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -220,7 +220,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,10 +335,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1748661852418" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1754371409012" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../xcommon/com.xrosstools.idea.gef" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -411,11 +411,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1267" y="5" width="1734" height="1395" extended-state="0" />
+    <frame x="-17" y="166" width="1734" height="1359" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.65741473" visible="true" weight="0.36439666" />
-      <window_info id="Structure" order="1" sideWeight="0.34258524" side_tool="true" visible="true" weight="0.36439666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.65499485" visible="true" weight="0.3739546" />
+      <window_info id="Structure" order="1" sideWeight="0.34500515" side_tool="true" visible="true" weight="0.3739546" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -424,7 +424,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3291039" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.20142744" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.20734695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -489,17 +489,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/BehaviorNodePart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/policies/BTNodeContainerEditPolicy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -679,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="108" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../xcommon/com.xrosstools.idea.gef/src/com/xrosstools/idea/gef/util/PropertyEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -707,13 +689,6 @@
           <folding>
             <element signature="e#674#675#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -830,6 +805,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/ActionNodePart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagramFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="779">
@@ -849,7 +831,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-1.8/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24776">
+        <state relative-caret-position="24738">
           <caret line="1381" column="18" selection-start-line="1381" selection-start-column="18" selection-end-line="1381" selection-end-column="18" />
         </state>
       </provider>
@@ -886,10 +868,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/parts/ActionNodePart.java">
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="665">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/actions/GenerateHelperAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xrosstools/xbehavior/idea/editor/model/BehaviorTreeDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
         </state>
       </provider>
     </entry>
