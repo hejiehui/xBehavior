@@ -1,6 +1,8 @@
 # xBehavior
 A behavior tree editor and runtime
 
+![xBehavior](https://github.com/user-attachments/assets/ab3a8346-7335-469d-89c0-dc2e4f79c142)
+
 # 安装
 打开IDEA插件管理器，搜索xbehavior，选择并安装。xBehavior依赖IDEA GEF插件，如果有提示，请一并安装
 
