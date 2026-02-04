@@ -6,6 +6,7 @@ import com.xrosstools.idea.gef.util.TextPropertyDescriptor;
 
 public abstract class BehaviorNode extends Node<BehaviorNodeConnection> implements PropertyConstants {
     private PropertyEntry<String> name = stringProperty(PROP_NAME);
+    private PropertyEntry<String> label = stringProperty(PROP_LABEL);
     private PropertyEntry<String> description = stringProperty(PROP_DESCRIPTION);
 
     private BehaviorNodeType type;
@@ -14,6 +15,7 @@ public abstract class BehaviorNode extends Node<BehaviorNodeConnection> implemen
         this.type = type;
         setInputLimit(1);
         register(name, new TextPropertyDescriptor());
+        register(label, new TextPropertyDescriptor());
         register(description, new TextPropertyDescriptor());
     }
 
@@ -23,6 +25,10 @@ public abstract class BehaviorNode extends Node<BehaviorNodeConnection> implemen
 
     public String getName() {
         return name.get();
+    }
+
+    public String getLabel() {
+        return label.get();
     }
 
     public void setName(String _name) {
@@ -38,7 +44,8 @@ public abstract class BehaviorNode extends Node<BehaviorNodeConnection> implemen
     }
 
     public String getFigureDisplayText() {
-        return getName();
+        String labelStr = getLabel();
+        return labelStr == null || labelStr.length() == 0 ? getName() : labelStr;
     }
 
     public String getTreeDisplayText() {

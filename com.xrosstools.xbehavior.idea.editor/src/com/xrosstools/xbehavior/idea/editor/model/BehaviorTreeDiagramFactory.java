@@ -25,7 +25,6 @@ import static com.xrosstools.idea.gef.util.XmlHelper.*;
 
 public class BehaviorTreeDiagramFactory implements PropertyConstants {
     private static final String BEHAVIOR_TREE = "behavior_tree";
-    private static final String NAME = "name";
     private static final String DESCRIPTION = "description";
     private static final String EVALUATOR = "evaluator";
 
@@ -40,31 +39,31 @@ public class BehaviorTreeDiagramFactory implements PropertyConstants {
 
     public BehaviorTreeDiagramFactory() {
         //Actions
-        register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_ASYNCHRONOUS, PROP_TIMEOUT, PROP_TIME_UNIT, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.ACTION).attributes(PROP_NAME, PROP_LABEL, PROP_ASYNCHRONOUS, PROP_TIMEOUT, PROP_TIME_UNIT, PROP_IMPLEMENTATION).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_LEFT_EXPRESSION, PROP_OPERATOR, PROP_RIGHT_EXPRESSION, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.CONDITION).attributes(PROP_NAME, PROP_LABEL, PROP_LEFT_EXPRESSION, PROP_OPERATOR, PROP_RIGHT_EXPRESSION, PROP_IMPLEMENTATION, PROP_MODE).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.FIXED_STATUS).attributes(PROP_NAME, PROP_STATUS).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.FIXED_STATUS).attributes(PROP_NAME, PROP_LABEL, PROP_STATUS).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.SLEEP).attributes(PROP_NAME, PROP_COUNT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.SLEEP).attributes(PROP_NAME, PROP_LABEL, PROP_COUNT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.SUBTREE).attributes(PROP_NAME, PROP_SUBTREE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.SUBTREE).attributes(PROP_NAME, PROP_LABEL, PROP_SUBTREE).nodes(PROP_DESCRIPTION);
 
         //Composites
-        register.register(BehaviorNodeType.SEQUENCE).attributes(PROP_NAME, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.SEQUENCE).attributes(PROP_NAME, PROP_LABEL, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.SELECTOR).attributes(PROP_NAME, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.SELECTOR).attributes(PROP_NAME, PROP_LABEL, PROP_REACTIVE).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.PARALLEL).attributes(PROP_NAME, PROP_COUNT, PROP_MODE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.PARALLEL).attributes(PROP_NAME, PROP_LABEL, PROP_COUNT, PROP_MODE).nodes(PROP_DESCRIPTION);
 
         //Decorators
-        register.register(BehaviorNodeType.REPEAT).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT, PROP_REPEAT_UNTIL_FAILURE).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.REPEAT).attributes(PROP_NAME, PROP_LABEL, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT, PROP_REPEAT_UNTIL_FAILURE).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.RETRY).attributes(PROP_NAME, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.RETRY).attributes(PROP_NAME, PROP_LABEL, PROP_COUNT, PROP_MODE, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
-        register.register(BehaviorNodeType.WAIT).attributes(PROP_NAME, PROP_TIMEOUT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
+        register.register(BehaviorNodeType.WAIT).attributes(PROP_NAME, PROP_LABEL, PROP_TIMEOUT, PROP_TIME_UNIT).nodes(PROP_DESCRIPTION);
 
-        PropertySourceXmlAccessor accessor = new PropertySourceXmlAccessor().attributes(PROP_NAME).nodes(PROP_DESCRIPTION);
+        PropertySourceXmlAccessor accessor = new PropertySourceXmlAccessor().attributes(PROP_NAME, PROP_LABEL).nodes(PROP_DESCRIPTION);
 
         register.register(BehaviorNodeType.INVERTER, accessor);
 

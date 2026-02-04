@@ -1,0 +1,15 @@
+package !PACKAGE!;
+
+import com.xrosstools.xbehavior.*;
+
+public class !CLASS_NAME! implements Action {
+    @Override
+	public StatusEnum tick(Blackboard context) {
+        return StatusEnum.SUCCESS;
+	}
+
+	@Override
+	public void reset() {
+
+	}
+}

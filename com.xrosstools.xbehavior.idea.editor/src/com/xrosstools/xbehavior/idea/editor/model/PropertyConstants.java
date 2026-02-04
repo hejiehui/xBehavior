@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 public interface PropertyConstants {
     String PROP_NAME = "Name";
+    String PROP_LABEL = "Label";
     String PROP_DESCRIPTION = "Description";
 
     String PROP_COUNT = "Count";

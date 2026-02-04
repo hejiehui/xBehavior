@@ -41,7 +41,7 @@ public class BehaviorNodePart extends AbstractNodeEditPart {
         BehaviorNode node = getBehaviorNode();
         BehaviorNodeFigure figure = (BehaviorNodeFigure)getFigure();
 
-        figure.setText(node.getName());
+        figure.setText(node.getTreeDisplayText());
 
         Point loc = node.getLocation();
         Dimension size = new Dimension(-1, PropertyConstants.DEFAULT_HEIGHT);

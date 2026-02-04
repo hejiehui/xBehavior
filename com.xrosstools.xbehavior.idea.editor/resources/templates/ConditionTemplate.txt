@@ -1,0 +1,10 @@
+package !PACKAGE!;
+
+import com.xrosstools.xbehavior.*;
+
+public class !CLASS_NAME! implements Condition {
+	@Override
+	public boolean check(Blackboard context) {
+        return false;
+	}
+}
