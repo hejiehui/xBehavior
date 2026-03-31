@@ -8,17 +8,6 @@
       A behavior tree editor. A no-code tool for building behavior tree.<br>
     ]]></description>
 
-  <change-notes><![CDATA[
-      <em>1.2.0</em>Support code generation for action and condition node. Support node label.<br>
-      <em>1.1.1</em>Fix model factory code generation bug.<br>
-      <em>1.1.0</em>Optimize model factory code generation.<br>
-      <em>1.0.0</em>Support basic concept of behavior tree.<br>
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
-
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
   <depends>com.intellij.modules.lang</depends>

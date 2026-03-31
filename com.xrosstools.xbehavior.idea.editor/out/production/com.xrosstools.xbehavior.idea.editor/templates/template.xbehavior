@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
- <behavior_tree evaluator="com.xrosstools.xbehavior.XpressionEvaluator">
-    <description/>
-    <nodes/>
-    <connections/>
-    <blackboard/>
-</behavior_tree>

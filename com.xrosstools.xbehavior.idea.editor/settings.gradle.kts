@@ -1,0 +1,1 @@
+rootProject.name = "com.xrosstools.xbehavior.idea.editor"
