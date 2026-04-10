@@ -12,6 +12,7 @@ public class XbehaviorFileType extends XmlLikeFileType {
     public static final String NAME = "Xross Behavior Model File";
     public static final String DESCRIPTION = "Xross Behavior Model File";
     public static final String EXTENSION = "xbehavior";
+    public static final Icon ICON = XbehaviorIcons.TREE;
 
     public static final XbehaviorFileType INSTANCE = new XbehaviorFileType();
 
@@ -40,7 +41,7 @@ public class XbehaviorFileType extends XmlLikeFileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return XbehaviorIcons.TREE;
+        return ICON;
     }
 
     @Override
